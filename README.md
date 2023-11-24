@@ -1,7 +1,7 @@
 # Awesome Articulated Objects Understanding
 A curated list of resources for articulated objects understanding.
 
-## Articulated Objects Reconstruction
+## Articulated Objects Reconstruction & Understanding
 ### PARIS: Part-level Reconstruction and Motion Analysis for Articulated Objects [ICCV 2023]
 [📄 Paper](https://arxiv.org/abs/2308.07391) | [🌐 Project Page](https://3dlg-hcvc.github.io/paris/) | [💻 Code](https://github.com/3dlg-hcvc/paris)
 - Keywords: Self-supervised, NeRF
