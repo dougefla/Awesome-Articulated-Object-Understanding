@@ -1,9 +1,7 @@
-# Awesome Articulated Object Understanding
+# Awesome Articulated Objects Understanding
 A curated list of resources for articulated objects understanding.
 
 ## Articulated Objects Reconstruction
-# Articulated Object Research Papers - Summary
-
 ### PARIS: Part-level Reconstruction and Motion Analysis for Articulated Objects [ICCV 2023]
 [📄 Paper](https://arxiv.org/abs/2308.07391) | [🌐 Project Page](https://3dlg-hcvc.github.io/paris/) | [💻 Code](https://github.com/3dlg-hcvc/paris)
 - Keywords: Self-supervised, NeRF
@@ -147,18 +145,6 @@ Digitizing physical objects into the virtual world has the potential to unlock n
 We address the task of predicting what parts of an object can open and how they move when they do so. The input is a single image of an object, and as output, we detect what parts of the object can open, and the motion parameters describing the articulation of each openable part. To tackle this task, we create two datasets of 3D objects: OPDSynth based on existing synthetic objects, and OPDReal based on RGBD reconstructions of real objects. We then design OPDRCNN, a neural architecture that detects openable parts and predicts their motion parameters. Our experiments show that this is a challenging task especially when considering generalization across object categories, and the limited amount of information in a single image. Our architecture outperforms baselines and prior work especially for RGB image inputs.
 </details>
 
-### CLA-NeRF: Category-Level Articulated Neural Radiance Field [ICRA 2022]
-[📄 Paper](https://arxiv.org/abs/2202.00181)
-- Keywords: Articulation, Supervised, NeRF
-- Input: Multiple RGB images
-- Dataset: PartNet-Mobility
-<details span>
-<summary><b>Abstract</b></summary>
-<br>
-
-We address the task of predicting what parts of an object can open and how they move when they do so. The input is a single image of an object, and as output, we detect what parts of the object can open, and the motion parameters describing the articulation of each openable part. To tackle this task, we create two datasets of 3D objects: OPDSynth based on existing synthetic objects, and OPDReal based on RGBD reconstructions of real objects. We then design OPDRCNN, a neural architecture that detects openable parts and predicts their motion parameters. Our experiments show that this is a challenging task especially when considering generalization across object categories, and the limited amount of information in a single image. Our architecture outperforms baselines and prior work especially for RGB image inputs.
-</details>
-
 ### Watch It Move: Unsupervised Discovery of 3D Joints for Re-Posing of Articulated Objects [CVPR 2022]
 [📄 Paper](https://arxiv.org/abs/2112.11347) | [🌐 Project Page](https://nvlabs.github.io/watch-it-move/) | [💻 Code](https://github.com/NVlabs/watch-it-move)
 - Keywords: Articulation, Unsupervised, MLP
@@ -243,14 +229,27 @@ We introduce a novel approach to detect and characterize 3D planar articulation 
 OPD tackles the challenge of detecting openable parts of objects and their motion parameters from a single view. Using two datasets, OPDSynth and OPDReal, we developed OPDRCNN, a neural network architecture for this purpose. Our work addresses the complexities of this task, especially in generalizing across object categories and the limited information in a single image. Our results demonstrate significant improvements over existing methods, particularly for RGB image inputs, marking a step forward in understanding object articulation.
 </details>
 
-### Watch It Move: Unsupervised Discovery of 3D Joints for Re-Posing of Articulated Objects [CVPR 2022]
-[📄 Paper](https://arxiv.org/abs/2112.11347) | [🌐 Project Page](https://nvlabs.github.io/watch-it-move/) | [💻 Code](https://github.com/NVlabs/watch-it-move)
-- Keywords: Articulation, Unsupervised, MLP
-- Input: Multi-view RGB sequence
-- Dataset: ZJU-MoCap
-<details span>
-<summary><b>Abstract</b></summary>
-<br>
-
-Our research introduces a unique unsupervised method for discovering 3D joints in articulated objects by observing their movement. This approach allows us to understand both the appearance and structure of previously unseen objects. We model the object parts in 3D and identify joints through their relative motion, overcoming the limitations of needing pre-defined structures. Our method is versatile, working effectively on a range of structures from robots to humans, and has significant implications for virtual reality, animation, and robotics.
-</details>
+### Understanding 3D Object Articulation in Internet Videos
+### Towards Real-World Category-level Articulation Pose Estimation
+### Self-supervised Neural Articulated Shape and Appearance Models
+### Distributional Depth-Based Estimation of Object Articulation Models
+### Act the Part: Learning Interaction Strategies for Articulated Object Part Discovery
+### Unsupervised Pose-Aware Part Decomposition for 3D Articulated Objects
+### ScrewNet: Category-Independent Articulation Model Estimation From Depth Images Using Screw Theory
+### CAPTRA: CAtegory-level Pose Tracking for Rigid and Articulated Objects from Point Clouds
+### A-SDF: Learning Disentangled Signed Distance Functions for Articulated Shape Representation
+### Learning to Infer Kinematic Hierarchies for Novel Object Instances
+### SAPIEN: A simulated part-based interactive environment
+### Nothing But Geometric Constraints: A Model-Free Method for Articulated Object Pose Estimation
+### Category-Level Articulated Object Pose Estimation
+### A Hand Motion-guided Articulation and Segmentation Estimation
+### RPM-Net: Recurrent Prediction of Motion and Parts from Point Cloud
+### Learning to Generalize Kinematic Models to Novel Objects
+### Deep Learning Based Robotic Tool Detection and Articulation Estimation With Spatio-Temporal Layers
+### Shape2Motion: Joint Analysis of Motion Parts and Attributes from 3D Shapes
+### Deep Part Induction from Articulated Object Pairs
+### The RBO Dataset of Articulated Objects and Interactions
+### Learning to Predict Part Mobility from a Single Static Snapshot
+### Reconstructing Articulated Rigged Models from RGB-D Videos
+### ShapeNet: An Information-Rich 3D Model Repository
+### Towards Understanding Articulated Objects
