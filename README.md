@@ -7,7 +7,7 @@ A curated list of resources for articulated objects understanding.
 - Keywords: Self-supervised, NeRF
 - Input: Two sets of multi-view images
 - Dataset: PartNet-Mobility, MultiScan
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -19,7 +19,7 @@ We design a self-supervised approach without relying any 3D supervision, semanti
 - Keywords: Articulation, Supervised, PointNet++
 - Input: Two point clouds
 - Dataset: CubiCasa5K
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -31,7 +31,7 @@ Our approach, named Ditto in the House, discovers possible articulated objects t
 - Keywords: Articulation, Semi-supervised, GNN
 - Input: Single Point cloud + segmentation
 - Dataset: PartNet-Mobility, PartNet
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -43,7 +43,7 @@ In this paper, we tackle the task of object kinematic motion prediction problem 
 - Keywords: Articulation, Reconstruction, Supervised
 - Input: Single RGB image
 - Dataset: PartNet-Mobility
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -55,7 +55,7 @@ We present CARTO, a novel approach for reconstructing multiple articulated objec
 - Keywords: Articulation, Transfer, Supervised, ResNet
 - Input: RGB, Mesh
 - Dataset: PartNet-Mobility
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -67,7 +67,7 @@ We present a neural network approach to transfer the motion from a single image 
 - Keywords: Articulation, Supervised, U-Net
 - Input: Single Point cloud
 - Dataset: Shape2Motion, PartNet-Mobility
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -78,7 +78,7 @@ We present Cart, a new approach towards articulated-object manipulations by huma
 [📄 Paper](https://proceedings.neurips.cc/paper_files/paper/2022/hash/3b3a83a5d86e1d424daefed43d998079-Abstract-Conference.html) | [💻 Code](https://github.com/smartscenes/multiscan) | [🌐 Project Page](https://3dlg-hcvc.github.io/multiscan/#/)
 - Keywords: Dataset, MultiScan
 - Input: Not specified
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -90,7 +90,7 @@ We introduce MultiScan, a scalable RGBD dataset construction pipeline leveraging
 - Keywords: Dataset, Articulation, Reconstruction, Supervised
 - Input: Single RGB-D image
 - Dataset: AKB-48
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -102,7 +102,7 @@ Human life is populated with articulated objects. A comprehensive understanding 
 - Keywords: Articulation, Supervised, PointNet++
 - Input: Single Point cloud
 - Dataset: PartNet-Mobility
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -114,7 +114,7 @@ We explore a novel method to perceive and manipulate 3D articulated objects that
 - Keywords: Articulation, Supervised+Factor Graph
 - Input: RGB-D sequence
 - Dataset: PartNet-Mobility
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -126,7 +126,7 @@ Robots deployed in human-centric environments may need to manipulate a diverse r
 - Keywords: Articulation, Supervised, PointNet++, NeRF
 - Input: Two point clouds
 - Dataset: Shape2Motion
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -138,7 +138,7 @@ Digitizing physical objects into the virtual world has the potential to unlock n
 - Keywords: Articulation, Supervised, MaskRCNN
 - Input: Single Point cloud
 - Dataset: OPDSynth, OPDReal
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -150,7 +150,7 @@ We address the task of predicting what parts of an object can open and how they 
 - Keywords: Articulation, Unsupervised, MLP
 - Input: Multi-view RGB sequence
 - Dataset: ZJU-MoCap
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -162,7 +162,7 @@ Rendering articulated objects while controlling their poses is critical to appli
 - Keywords: Articulation, Supervised, FRCNN Net + Optimization
 - Input: RGB sequence
 - Dataset: Charades
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -174,7 +174,7 @@ We propose to investigate detecting and characterizing the 3D planar articulatio
 - Keywords: Articulation, Supervised, PointNet++
 - Input: RGB-D
 - Dataset: Multi ReArt-48 (AKB-48)
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -186,7 +186,7 @@ Human life is populated with articulated objects. Current Category-level Articul
 - Keywords: Articulation, Supervised, NeRF
 - Input: Multiple RGB images
 - Dataset: PartNet-Mobility
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -198,7 +198,7 @@ We address the task of reconstructing and animating articulated objects from a s
 - Keywords: Articulation, Supervised, PointNet++
 - Input: RGB-D
 - Dataset: Multi ReArt-48 (AKB-48)
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -210,7 +210,7 @@ We present a new approach for category-level articulation pose estimation (CAPE)
 - Keywords: Articulation, Supervised, FRCNN Net + Optimization
 - Input: RGB sequence
 - Dataset: Charades
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
@@ -222,7 +222,7 @@ We introduce a novel approach to detect and characterize 3D planar articulation 
 - Keywords: Articulation, Supervised, MaskRCNN
 - Input: Single Point cloud
 - Dataset: OPDSynth, OPDReal
-<details span>
+<details open>
 <summary><b>Abstract</b></summary>
 <br>
 
