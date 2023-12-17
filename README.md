@@ -4,6 +4,9 @@ A curated list of resources for articulated objects understanding, including art
 <details span>
 <summary><b>Update log</b></summary>
 - 2023/11/28: Initiate with 39 papers.
+- 2023/12/17: Add 2 previous papers:
+  - StrobeNet: Category-Level Multiview Reconstruction of Articulated Objects [Arxiv 2021, StrobeNet]
+  - Unsupervised Kinematic Motion Detection for Part-segmented 3D Shape Collections [SIGGRAPH 2022, UKMD]
 </details>
 
 ## Contents
@@ -256,6 +259,20 @@ Human life is populated with articulated objects. Current Category-level Articul
 Learning geometry, motion, and appearance priors of object classes is important for the solution of a large variety of computer vision problems. While the majority of approaches has focused on static objects, dynamic objects, especially with controllable articulation, are less explored. We propose a novel approach for learning a representation of the geometry, appearance, and motion of a class of articulated objects given only a set of color images as input. In a self-supervised manner, our novel representation learns shape, appearance, and articulation codes that enable independent control of these semantic dimensions. Our model is trained end-to-end without requiring any articulation annotations. Experiments show that our approach performs well for different joint types, such as revolute and prismatic joints, as well as different combinations of these joints. Compared to state of the art that uses direct 3D supervision and does not output appearance, we recover more faithful geometry and appearance from 2D observations only. In addition, our representation enables a large variety of applications, such as few-shot reconstruction, the generation of novel articulations, and novel view-synthesis.
 </details>
 
+### Unsupervised Kinematic Motion Detection for Part-segmented 3D Shape Collections [SIGGRAPH 2022, UKMD]
+[📄 Paper](https://arxiv.org/abs/2206.08497) | [💻 Code](https://github.com/xxh43/ukmd)
+- Task: Articulation
+- Method: Unsupervised
+- Stages: Candidate + 2 stage optimization
+- Dataset: PartNet-Mobility
+- Input: Single shape + segmentation
+<details open>
+<summary><b>Abstract</b></summary>
+<br>
+
+3D models of manufactured objects are important for populating virtual worlds and for synthetic data generation for vision and robotics. To be most useful, such objects should be articulated: their parts should move when interacted with. While articulated object datasets exist, creating them is labor-intensive. Learning-based prediction of part motions can help, but all existing methods require annotated training data. In this paper, we present an unsupervised approach for discovering articulated motions in a part-segmented 3D shape collection. Our approach is based on a concept we call category closure: any valid articulation of an object's parts should keep the object in the same semantic category (e.g. a chair stays a chair). We operationalize this concept with an algorithm that optimizes a shape's part motion parameters such that it can transform into other shapes in the collection. We evaluate our approach by using it to re-discover part motions from the PartNet-Mobility dataset. For almost all shape categories, our method's predicted motion parameters have low error with respect to ground truth annotations, outperforming two supervised motion prediction methods.
+</details>
+
 ### Distributional Depth-Based Estimation of Object Articulation Models [CoRL 2021, DUST-Net]
 [📄 Paper](https://arxiv.org/abs/2108.05875v1) | [🌐 Project Page](https://pearl-utexas.github.io/DUST-net/) | [💻 Code](https://github.com/Pearl-UTexas/DUST-net)
 - Task: Articulation
@@ -357,6 +374,20 @@ Recent work has made significant progress on using implicit functions, as a cont
 <br>
 
 Manipulating an articulated object requires perceiving itskinematic hierarchy: its parts, how each can move, and howthose motions are coupled. Previous work has explored per-ception for kinematics, but none infers a complete kinematichierarchy on never-before-seen object instances, without relyingon a schema or template. We present a novel perception systemthat achieves this goal. Our system infers the moving parts ofan object and the kinematic couplings that relate them. Toinfer parts, it uses a point cloud instance segmentation neuralnetwork and to infer kinematic hierarchies, it uses a graphneural network to predict the existence, direction, and typeof edges (i.e. joints) that relate the inferred parts. We trainthese networks using simulated scans of synthetic 3D models.We evaluate our system on simulated scans of 3D objects, andwe demonstrate a proof-of-concept use of our system to drivereal-world robotic manipulation.
+</details>
+
+### StrobeNet: Category-Level Multiview Reconstruction of Articulated Objects [Arxiv 2021, StrobeNet]
+[📄 Paper](https://arxiv.org/abs/2105.08016) | [🌐 Project Page](https://dzhange.github.io/StrobeNet/)
+- Task: Articulation, Reconstruction
+- Network Keywords: SegNet, IF-Net
+- Stages: NAOCS + Reconstruction
+- Dataset: Shape2Motion, PartNet-Mobility
+- Input: A set of sparse images
+<details open>
+<summary><b>Abstract</b></summary>
+<br>
+
+We present StrobeNet, a method for category-level 3D reconstruction of articulating objects from one or more unposed RGB images. Reconstructing general articulating object categories % has important applications, but is challenging since objects can have wide variation in shape, articulation, appearance and topology. We address this by building on the idea of category-level articulation canonicalization -- mapping observations to a canonical articulation which enables correspondence-free multiview aggregation. Our end-to-end trainable neural network estimates feature-enriched canonical 3D point clouds, articulation joints, and part segmentation from one or more unposed images of an object. These intermediate estimates are used to generate a final implicit 3D reconstruction.Our approach reconstructs objects even when they are observed in different articulations in images with large baselines, and animation of reconstructed shapes. Quantitative and qualitative evaluations on different object categories show that our method is able to achieve high reconstruction accuracy, especially as more views are added.
 </details>
 
 ### SAPIEN: A simulated part-based interactive environment [CVPR 2020, SPAIEN]

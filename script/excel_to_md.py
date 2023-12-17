@@ -1,6 +1,6 @@
 import pandas as pd
 
-def generate_markdown(excel_file, output_file):
+def generate_markdown(excel_file, output_file, lines_range=None):
     # Read the Excel file
     df = pd.read_excel(excel_file)
 
@@ -54,4 +54,5 @@ def generate_markdown(excel_file, output_file):
                 md_file.write(f"{abstract}\n")
                 md_file.write("</details>\n\n")
 
-generate_markdown('paper_list.xlsx', 'output.md')
+if __name__ == "__main__":
+    generate_markdown('./excel/paper_list.xlsx', 'output.md')
