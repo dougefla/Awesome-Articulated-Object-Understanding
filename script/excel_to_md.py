@@ -40,7 +40,7 @@ def generate_markdown(excel_file, output_file, lines_range=None):
             md_file.write(f"## {category}\n\n")
             # Sort the paper list by Year
             category_dict[category].sort(key=lambda x: x.year, reverse=True)
-            for paper_item in category_dict[category]:
+            for idx, paper_item in enumerate(category_dict[category]):
                 title = paper_item.title
                 short = paper_item.short
                 level = paper_item.level
@@ -52,8 +52,10 @@ def generate_markdown(excel_file, output_file, lines_range=None):
                 input = paper_item.input
                 abstract = paper_item.abstract
                 # Writing to the markdown file
-                line_0 = f"### {title} [{publish}, {short}]\n"
+                line_0 = f"### {idx+1}. {title}\n"
                 md_file.write(line_0)
+                line_00 = f"*{short}, {publish}*\n\n"
+                md_file.write(line_00)
 
                 line_1 = f"[📄 Paper]({paper})"
                 if not pd.isna(website):
