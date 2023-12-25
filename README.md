@@ -3,11 +3,12 @@ A curated list of resources for articulated objects understanding, including art
 
 <details span>
 <summary><b>Update log</b></summary>
-- 2023/11/28: Initiate with 39 papers.
+- 2023/12/25: Merry Xmas! Add 17 papers. Remove 3 papers. Re-organize the markdown.
 - 2023/12/17: Add 2 previous papers:
   - StrobeNet: Category-Level Multiview Reconstruction of Articulated Objects [Arxiv 2021, StrobeNet]
   - Unsupervised Kinematic Motion Detection for Part-segmented 3D Shape Collections [SIGGRAPH 2022, UKMD]
-- 2023/12/25: Merry Xmas! Add 17 papers. Remove 3 papers. Re-organize the markdown.
+- 2023/11/28: Initiate with 39 papers.
+
 </details>
 
 ## Table of contents
