@@ -67,7 +67,7 @@ Humans can easily understand a single image as depicting multiple potential obje
 </details>
 
 ### 3. OPDMulti: Openable Part Detection for Multiple Objects
-*OPDMulti, 3DV 2024 *
+*OPDMulti, 3DV 2024*
 
 [📄 Paper](https://arxiv.org/abs/2303.14087) | [🌐 Project Page](https://3dlg-hcvc.github.io/OPDMulti/) | [💻 Code](https://github.com/3dlg-hcvc/OPDMulti)
 - Level: Category-Agnostic
