@@ -5,6 +5,9 @@ A curated list of resources for articulated objects understanding, including art
 <summary><b>Update log</b></summary>
 <br>
 
+**2023/12/30**
+- Add 3 papers: NAP, GAPartNet, OPDMulti
+
 **2023/12/25**
 - Merry Xmas! Add 17 papers. Remove 3 papers. Re-organize the markdown.
 
@@ -24,6 +27,7 @@ A curated list of resources for articulated objects understanding, including art
 - [Articulation Estimation](##Articulation-Estimation)
 - [Dataset](##Dataset)
 - [Dataset Augmentation](##Dataset-Augmentation)
+- [Generation](##Generation)
 - [Implicit Representation](##Implicit-Representation)
 - [Kinematic Inference](##Kinematic-Inference)
 - [Manipulation](##Manipulation)
@@ -62,7 +66,21 @@ The dominant majority of 3D models that appear in gaming, VR/AR, and those we us
 Humans can easily understand a single image as depicting multiple potential objects permitting interaction. We use this skill to plan our interactions with the world and accelerate understanding new objects without engaging in interaction. In this paper, we would like to endow machines with the similar ability, so that intelligent agents can better explore the 3D scene or manipulate objects. Our approach is a transformer-based model that predicts the 3D location, physical properties and affordance of objects. To power this model, we collect a dataset with Internet videos, egocentric videos and indoor images to train and validate our approach. Our model yields strong performance on our data, and generalizes well to robotics data. 
 </details>
 
-### 3. OPD: Single-view 3D Openable Part Detection
+### 3. OPDMulti: Openable Part Detection for Multiple Objects
+*OPDMulti, 3DV 2024 *
+
+[📄 Paper](https://arxiv.org/abs/2303.14087) | [🌐 Project Page](https://3dlg-hcvc.github.io/OPDMulti/) | [💻 Code](https://github.com/3dlg-hcvc/OPDMulti)
+- Level: Category-Agnostic
+- Dataset: Mask2Former
+- Input: Single RGB Image
+<details span>
+<summary><b>Abstract</b></summary>
+<br>
+
+Openable part detection is the task of detecting the openable parts of an object in a single-view image, and predicting corresponding motion parameters. Prior work investigated the unrealistic setting where all input images only contain a single openable object. We generalize this task to scenes with multiple objects each potentially possessing openable parts, and create a corresponding dataset based on real-world scenes. We then address this more challenging scenario with OPDFormer: a part-aware transformer architecture. Our experiments show that the OPDFormer architecture significantly outperforms prior work. The more realistic multiple-object scenarios we investigated remain challenging for all methods, indicating opportunities for future work.
+</details>
+
+### 4. OPD: Single-view 3D Openable Part Detection
 *OPD, ECCV 2022*
 
 [📄 Paper](https://arxiv.org/abs/2203.16421) | [🌐 Project Page](https://3dlg-hcvc.github.io/OPD/) | [💻 Code](https://github.com/3dlg-hcvc/OPD)
@@ -76,7 +94,7 @@ Humans can easily understand a single image as depicting multiple potential obje
 We address the task of predicting what parts of an object can open and how they move when they do so. The input is a single image of an object, and as output we detect what parts of the object can open, and the motion parameters describ- ing the articulation of each openable part. To tackle this task, we create two datasets of 3D objects: OPDSynth based on existing synthetic objects, and OPDReal based on RGBD reconstructions of real objects. We then design OPDRCNN, a neural architecture that detects openable parts and predicts their motion parameters. Our experiments show that this is a challenging task especially when considering general- ization across object categories, and the limited amount of information in a single image. Our architecture outperforms baselines and prior work especially for RGB image inputs.
 </details>
 
-### 4. Understanding 3D Object Articulation in Internet Videos
+### 5. Understanding 3D Object Articulation in Internet Videos
 *3DADN, CVPR 2022*
 
 [📄 Paper](https://arxiv.org/abs/2203.16531) | [🌐 Project Page](https://jasonqsy.github.io/Articulation3D/) | [💻 Code](https://github.com/JasonQSY/Articulation3D)
@@ -90,7 +108,7 @@ We address the task of predicting what parts of an object can open and how they 
 We propose to investigate detecting and characterizing the 3D planar articulation of objects from ordinary videos. While seemingly easy for humans, this problem poses many challenges for computers. We propose to approach this problem by combining a top-down detection system that finds planes that can be articulated along with an optimization approach that solves for a 3D plane that can explain a sequence of observed articulations. We show that this system can be trained on a combination of videos and 3D scan datasets. When tested on a dataset of challenging Internet videos and the Charades dataset, our approach obtains strong performance. 
 </details>
 
-### 5. A Hand Motion-guided Articulation and Segmentation Estimation
+### 6. A Hand Motion-guided Articulation and Segmentation Estimation
 *Hartanto etc., ROMAN 2020*
 
 [📄 Paper](https://arxiv.org/abs/2005.03691)
@@ -103,7 +121,7 @@ We propose to investigate detecting and characterizing the 3D planar articulatio
 In this paper, we present a method for simultaneous articulation model estimation and segmentation of an articulated object in RGB-D images using human hand motion. Our method uses the hand motion in the processes of the initial articulation model estimation, ICP-based model parameter optimization, and region selection of the target object. The hand motion gives an initial guess of the articulation model: prismatic or revolute joint. The method estimates the joint parameters by aligning the RGB-D images with the constraint of the hand motion. Finally, the target regions are selected from the cluster regions which move symmetrically along with the articulation model. Our experimental results show the robustness of the proposed method for the various objects.
 </details>
 
-### 6. Deep Part Induction from Articulated Object Pairs
+### 7. Deep Part Induction from Articulated Object Pairs
 *Yi etc., SIGGRAPH Asia 2018*
 
 [📄 Paper](https://arxiv.org/abs/1809.07417) | [💻 Code](https://github.com/ericyi/articulated-part-induction)
@@ -380,6 +398,20 @@ This paper introduces a deep architecture for segmenting 3D objects into their l
 In this paper, we tackle the task of object kinematic motion prediction problem in a semi-weakly supervised manner. Our key observations are two-fold. First, although 3D dataset with fully annotated motion labels is limited, there are existing datasets and methods for object part semantic segmentation at large scale. Second, semantic part segmentation and mobile part segmentation is not always consistent but it is possible to detect the mobile parts from the underlying 3D structure. Towards this end, we propose a graph neural network to learn the map between hierarchical part-level segmentation and mobile parts parameters, which are further refined based on geometric alignment. This network can be first trained on PartNet-Mobility dataset with fully labeled mobility information and then applied on PartNet dataset with fine-grained and hierarchical part-level segmentation. The network predictions yield a large scale of 3D objects with pseudo labeled mobility information and can further be used for weakly-supervised learning with pre-existing segmentation. Our experiments show there are significant performance boosts with the augmented data for previous method designed for kinematic motion prediction on 3D partial scans.
 </details>
 
+## Generation
+
+### 1. NAP: Neural 3D Articulation Prior
+*NAP, NIPS 2023*
+
+[📄 Paper](https://arxiv.org/abs/2305.16315) | [🌐 Project Page](https://www.cis.upenn.edu/~leijh/projects/nap/) | [💻 Code](https://github.com/JiahuiLei/NAP)
+- Dataset: Diffusion model
+<details span>
+<summary><b>Abstract</b></summary>
+<br>
+
+We propose Neural 3D Articulation Prior (NAP), the first 3D deep generative model to synthesize 3D articulated object models. Despite the extensive research on generating 3D objects, compositions, or scenes, there remains a lack of focus on capturing the distribution of articulated objects, a common object category for human and robot interaction. To generate articulated objects, we first design a novel articulation tree/graph parameterization and then apply a diffusion-denoising probabilistic model over this representation where articulated objects can be generated via denoising from random complete graphs. In order to capture both the geometry and the motion structure whose distribution will affect each other, we design a graph-attention denoising network for learning the reverse diffusion process. We propose a novel distance that adapts widely used 3D generation metrics to our novel task to evaluate generation quality, and experiments demonstrate our high performance in articulated object generation. We also demonstrate several conditioned generation applications, including Part2Motion, PartNet-Imagination, Motion2Part, and GAPart2Object.
+</details>
+
 ## Implicit Representation
 
 ### 1. PARIS: Part-level Reconstruction and Motion Analysis for Articulated Objects
@@ -633,7 +665,21 @@ Manipulating unseen articulated objects through visual feedback is a critical bu
 Interactions with articulated objects are a challenging but important task for mobile robots. To tackle this challenge, we propose a novel closed-loop control pipeline, which integrates manipulation priors from affordance estimation with sampling-based whole-body control. We introduce the concept of agent-aware affordances which fully reflect the agent's capabilities and embodiment and we show that they outperform their state-of-the-art counterparts which are only conditioned on the end-effector geometry. Additionally, closed-loop affordance inference is found to allow the agent to divide a task into multiple non-continuous motions and recover from failure and unexpected states. Finally, the pipeline is able to perform long-horizon mobile manipulation tasks, i.e. opening and closing an oven, in the real world with high success rates (opening: 71%, closing: 72%).
 </details>
 
-### 6. FlowBot3D: Learning 3D Articulation Flow to Manipulate Articulated Objects
+### 6. GAPartNet: Cross-Category Domain-Generalizable Object Perception and Manipulation via Generalizable and Actionable Parts
+*GAPartNet, CVPR 2023*
+
+[📄 Paper](https://arxiv.org/abs/2211.05272) | [🌐 Project Page](https://pku-epic.github.io/GAPartNet/) | [💻 Code](https://github.com/PKU-EPIC/GAPartNet)
+- Level: Category-Agnostic
+- Dataset: Sparse Unet
+- Input: Single Point Cloud
+<details span>
+<summary><b>Abstract</b></summary>
+<br>
+
+For years, researchers have been devoted to generalizable object perception and manipulation, where cross-category generalizability is highly desired yet underexplored. In this work, we propose to learn such cross-category skills via Generalizable and Actionable Parts (GAParts). By identifying and defining 9 GAPart classes (lids, handles, etc.) in 27 object categories, we construct a large-scale part-centric interactive dataset, GAPartNet, where we provide rich, part-level annotations (semantics, poses) for 8,489 part instances on 1,166 objects. Based on GAPartNet, we investigate three cross-category tasks: part segmentation, part pose estimation, and part-based object manipulation. Given the significant domain gaps between seen and unseen object categories, we propose a robust 3D segmentation method from the perspective of domain generalization by integrating adversarial learning techniques. Our method outperforms all existing methods by a large margin, no matter on seen or unseen categories. Furthermore, with part segmentation and pose estimation results, we leverage the GAPart pose definition to design part-based manipulation heuristics that can generalize well to unseen object categories in both the simulator and the real world. Our dataset, code, and demos are available on our project page.
+</details>
+
+### 7. FlowBot3D: Learning 3D Articulation Flow to Manipulate Articulated Objects
 *FlowBot3D, RSS 2022*
 
 [📄 Paper](https://arxiv.org/abs/2205.04382) | [🌐 Project Page](https://sites.google.com/view/articulated-flowbot-3d/home) | [💻 Code](https://github.com/r-pad/flowbot3d)
@@ -647,7 +693,7 @@ Interactions with articulated objects are a challenging but important task for m
 We explore a novel method to perceive and manipulate 3D articulated objects that generalizes to enable a robot to articulate unseen classes of objects. We propose a vision-based system that learns to predict the potential motions of the parts of a variety of articulated objects to guide downstream motion planning of the system to articulate the objects. To predict the object motions, we train a neural network to output a dense vector field representing the point-wise motion direction of the points in the point cloud under articulation. We then deploy an analytical motion planner based on this vector field to achieve a policy that yields maximum articulation. We train the vision system entirely in simulation, and we demonstrate the capability of our system to generalize to unseen object instances and novel categories in both simulation and the real world, deploying our policy on a Sawyer robot with no finetuning. Results show that our system achieves state-of-the-art performance in both simulated and real-world experiments.
 </details>
 
-### 7. Neural Field Representations of Articulated Objects for Robotic Manipulation Planning
+### 8. Neural Field Representations of Articulated Objects for Robotic Manipulation Planning
 *Grote etc., CVPRW 2023*
 
 [📄 Paper](https://arxiv.org/abs/2210.12126) | [🌐 Project Page](https://phgrote.github.io/nfr/)
@@ -660,7 +706,7 @@ We explore a novel method to perceive and manipulate 3D articulated objects that
 Traditional approaches for manipulation planning rely on an explicit geometric model of the environment to formulate a given task as an optimization problem. However, inferring an accurate model from raw sensor input is a hard problem in itself, in particular for articulated objects (e.g., closets, drawers). In this paper, we propose a Neural Field Representation (NFR) of articulated objects that enables manipulation planning directly from images. Specifically, after taking a few pictures of a new articulated object, we can forward simulate its possible movements, and, therefore, use this neural model directly for planning with trajectory optimization. Additionally, this representation can be used for shape reconstruction, semantic segmentation and image rendering, which provides a strong supervision signal during training and generalization. We show that our model, which was trained only on synthetic images, is able to extract a meaningful representation for unseen objects of the same class, both in simulation and with real images. Furthermore, we demonstrate that the representation enables robotic manipulation of an articulated object in the real world directly from images.
 </details>
 
-### 8. Act the Part: Learning Interaction Strategies for Articulated Object Part Discovery
+### 9. Act the Part: Learning Interaction Strategies for Articulated Object Part Discovery
 *AtP, ICCV 2021*
 
 [📄 Paper](https://arxiv.org/abs/2105.01047)
