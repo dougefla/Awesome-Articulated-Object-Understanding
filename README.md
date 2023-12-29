@@ -23,18 +23,18 @@ A curated list of resources for articulated objects understanding, including art
 
 ## Table of contents
 
-- [Articulation Detection](##Articulation-Detection)
-- [Articulation Estimation](##Articulation-Estimation)
-- [Dataset](##Dataset)
-- [Dataset Augmentation](##Dataset-Augmentation)
-- [Generation](##Generation)
-- [Implicit Representation](##Implicit-Representation)
-- [Kinematic Inference](##Kinematic-Inference)
-- [Manipulation](##Manipulation)
-- [Motion Transfer](##Motion-Transfer)
-- [Reconstruction](##Reconstruction)
-- [Scene-level Reconstruction](##Scene-level-Reconstruction)
-- [Tracking](##Tracking)
+- [Articulation Detection](#articulation-detection)
+- [Articulation Estimation](#articulation-estimation)
+- [Dataset](#dataset)
+- [Dataset Augmentation](#dataset-augmentation)
+- [Generation](#generation)
+- [Implicit Representation](#implicit-representation)
+- [Kinematic Inference](#kinematic-inference)
+- [Manipulation](#manipulation)
+- [Motion Transfer](#motion-transfer)
+- [Reconstruction](#reconstruction)
+- [Scene-level Reconstruction](#scene-level-reconstruction)
+- [Tracking](#tracking)
 
 ## Articulation Detection
 

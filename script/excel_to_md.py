@@ -1,7 +1,5 @@
 import pandas as pd
 
-# [TODO] The jump in catelog is not working.
-
 class PaperItem:
     def __init__(self, title, short, category, level, year, publish, paper, code, website, dataset, input, abstract):
         self.title = title
@@ -35,7 +33,7 @@ def generate_markdown(excel_file, output_file, lines_range=None):
         # Generate catelog with links
         md_file.write("## Table of contents\n\n")
         for category in sorted(category_dict.keys()):
-            md_file.write(f"- [{category}](##{category.replace(' ', '-')})\n")
+            md_file.write(f"- [{category}](#{category.replace(' ', '-').lower()})\n")
         md_file.write("\n")
         
         for category in sorted(category_dict.keys()):
