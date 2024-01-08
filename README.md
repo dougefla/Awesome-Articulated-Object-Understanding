@@ -5,6 +5,9 @@ A curated list of resources for articulated objects understanding, including art
 <summary><b>Update log</b></summary>
 <br>
 
+**2024/01/08**
+- Add 1 paper: CAGE
+
 **2023/12/30**
 - Add 3 papers: NAP, GAPartNet, OPDMulti
 
@@ -71,7 +74,6 @@ Humans can easily understand a single image as depicting multiple potential obje
 
 [📄 Paper](https://arxiv.org/abs/2303.14087) | [🌐 Project Page](https://3dlg-hcvc.github.io/OPDMulti/) | [💻 Code](https://github.com/3dlg-hcvc/OPDMulti)
 - Level: Category-Agnostic
-- Dataset: Mask2Former
 - Input: Single RGB Image
 <details span>
 <summary><b>Abstract</b></summary>
@@ -126,7 +128,6 @@ In this paper, we present a method for simultaneous articulation model estimatio
 
 [📄 Paper](https://arxiv.org/abs/1809.07417) | [💻 Code](https://github.com/ericyi/articulated-part-induction)
 - Level: Category-Level
-- Dataset: ShapePFCN
 - Input: Point Cloud + CAD model
 <details span>
 <summary><b>Abstract</b></summary>
@@ -374,7 +375,6 @@ We present a dataset with models of 14 articulated objects commonly found in hum
 *ShapePFCN, CVPR 2017*
 
 [📄 Paper](https://arxiv.org/abs/1612.02808) | [🌐 Project Page](https://people.cs.umass.edu/~kalo/papers/shapepfcn/index.html) | [💻 Code](https://github.com/kalov/ShapePFCN)
-- Dataset: ShapePFCN
 <details span>
 <summary><b>Abstract</b></summary>
 <br>
@@ -404,12 +404,23 @@ In this paper, we tackle the task of object kinematic motion prediction problem 
 *NAP, NIPS 2023*
 
 [📄 Paper](https://arxiv.org/abs/2305.16315) | [🌐 Project Page](https://www.cis.upenn.edu/~leijh/projects/nap/) | [💻 Code](https://github.com/JiahuiLei/NAP)
-- Dataset: Diffusion model
 <details span>
 <summary><b>Abstract</b></summary>
 <br>
 
 We propose Neural 3D Articulation Prior (NAP), the first 3D deep generative model to synthesize 3D articulated object models. Despite the extensive research on generating 3D objects, compositions, or scenes, there remains a lack of focus on capturing the distribution of articulated objects, a common object category for human and robot interaction. To generate articulated objects, we first design a novel articulation tree/graph parameterization and then apply a diffusion-denoising probabilistic model over this representation where articulated objects can be generated via denoising from random complete graphs. In order to capture both the geometry and the motion structure whose distribution will affect each other, we design a graph-attention denoising network for learning the reverse diffusion process. We propose a novel distance that adapts widely used 3D generation metrics to our novel task to evaluate generation quality, and experiments demonstrate our high performance in articulated object generation. We also demonstrate several conditioned generation applications, including Part2Motion, PartNet-Imagination, Motion2Part, and GAPart2Object.
+</details>
+
+### 2. CAGE: Controllable Articulation Generation
+*CAGE, Arixv 2023*
+
+[📄 Paper](https://arxiv.org/abs/2312.09570) | [🌐 Project Page](https://3dlg-hcvc.github.io/cage/) | [💻 Code](https://github.com/3dlg-hcvc/cage)
+- Dataset: PartNet-Mobility
+<details span>
+<summary><b>Abstract</b></summary>
+<br>
+
+We address the challenge of generating 3D articulated objects in a controllable fashion. Currently, modeling articulated 3D objects is either achieved through laborious manual authoring, or using methods from prior work that are hard to scale and control directly. We leverage the interplay between part shape, connectivity, and motion using a denoising diffusion-based method with attention modules designed to extract correlations between part attributes. Our method takes an object category label and a part connectivity graph as input and generates an object's geometry and motion parameters. The generated objects conform to user-specified constraints on the object category, part shape, and part articulation. Our experiments show that our method outperforms the state-of-the-art in articulated object generation, producing more realistic objects while conforming better to user constraints.
 </details>
 
 ## Implicit Representation
@@ -670,7 +681,6 @@ Interactions with articulated objects are a challenging but important task for m
 
 [📄 Paper](https://arxiv.org/abs/2211.05272) | [🌐 Project Page](https://pku-epic.github.io/GAPartNet/) | [💻 Code](https://github.com/PKU-EPIC/GAPartNet)
 - Level: Category-Agnostic
-- Dataset: Sparse Unet
 - Input: Single Point Cloud
 <details span>
 <summary><b>Abstract</b></summary>
@@ -755,7 +765,6 @@ We present Cart, a new approach towards articulated-object manipulations by huma
 
 [📄 Paper](https://dl.acm.org/doi/10.1145/3130800.3130811)
 - Level: Category-Agnostic
-- Dataset: ShapeNetCore
 - Input: Snapshots
 <details span>
 <summary><b>Abstract</b></summary>
