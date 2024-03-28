@@ -32,11 +32,15 @@ def generate_markdown(excel_file, output_file, lines_range=None):
 
         # Generate catelog with links
         md_file.write("## Table of contents\n\n")
-        for category in sorted(category_dict.keys()):
+        category_dict_keys = set(category_dict.keys())
+        category_dict_keys.remove('Survey')
+        category_dict_keys = ['Survey']+ sorted(list(category_dict_keys))
+
+        for category in category_dict_keys:
             md_file.write(f"- [{category}](#{category.replace(' ', '-').lower()})\n")
         md_file.write("\n")
         
-        for category in sorted(category_dict.keys()):
+        for category in category_dict_keys:
             md_file.write(f"## {category}\n\n")
             # Sort the paper list by Year
             category_dict[category].sort(key=lambda x: x.year, reverse=True)

@@ -6,6 +6,9 @@ A curated list of resources for articulated objects understanding, including art
 <br>
 
 **2024/03/26**
+- Add 1 paper: Survey on Modeling of Articulated Objects
+
+**2024/03/26**
 - Add 1 paper: 3D Implicit Transporter
 
 **2024/03/16**
@@ -32,6 +35,7 @@ A curated list of resources for articulated objects understanding, including art
 
 ## Table of contents
 
+- [Survey](#survey)
 - [Articulation Detection](#articulation-detection)
 - [Articulation Estimation](#articulation-estimation)
 - [Dataset](#dataset)
@@ -44,6 +48,19 @@ A curated list of resources for articulated objects understanding, including art
 - [Reconstruction](#reconstruction)
 - [Scene-level Reconstruction](#scene-level-reconstruction)
 - [Tracking](#tracking)
+
+## Survey
+
+### 1. Survey on Modeling of Articulated Objects
+*Liu etc., Arxiv 2024*
+
+[📄 Paper](https://arxiv.org/abs/2403.14937)
+<details span>
+<summary><b>Abstract</b></summary>
+<br>
+
+3D modeling of articulated objects is a research problem within computer vision, graphics, and robotics. Its objective is to understand the shape and motion of the articulated components, represent the geometry and mobility of object parts, and create realistic models that reflect articulated objects in the real world. This survey provides a comprehensive overview of the current state-of-the-art in 3D modeling of articulated objects, with a specific focus on the task of articulated part perception and articulated object creation (reconstruction and generation). We systematically review and discuss the relevant literature from two perspectives: geometry processing and articulation modeling. Through this survey, we highlight the substantial progress made in these areas, outline the ongoing challenges, and identify gaps for future research. Our survey aims to serve as a foundational reference for researchers and practitioners in computer vision and graphics, offering insights into the complexities of articulated object modeling.
+</details>
 
 ## Articulation Detection
 
