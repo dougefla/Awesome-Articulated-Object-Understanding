@@ -5,7 +5,7 @@ A curated list of resources for articulated objects understanding, including art
 <summary><b>Update log</b></summary>
 <br>
 
-**2024/03/26**
+**2024/03/28**
 - Add 1 paper: Survey on Modeling of Articulated Objects
 
 **2024/03/26**
