@@ -5,8 +5,11 @@ A curated list of resources for articulated objects understanding, including art
 <summary><b>Update log</b></summary>
 <br>
 
+**2024/04/19**
+- Add 1 paper: REACTO
+
 **2024/04/05**
-- Add 3 paper: Knowledge NeRF, Uzolas eta al, DigitalTwinArt
+- Add 3 papers: Knowledge NeRF, Uzolas eta al, DigitalTwinArt
 
 **2024/03/28**
 - Add 1 paper: Survey on Modeling of Articulated Objects
@@ -492,7 +495,21 @@ We present Knowledge NeRF to synthesize novel views for dynamic scenes.Reconstru
 We address the problem of building digital twins of unknown articulated objects from two RGBD scans of the object at different articulation states. We decompose the problem into two stages, each addressing distinct aspects. Our method first reconstructs object-level shape at each state, then recovers the underlying articulation model including part segmentation and joint articulations that associate the two states. By explicitly modeling point-level correspondences and exploiting cues from images, 3D reconstructions, and kinematics, our method yields more accurate and stable results compared to prior work. It also handles more than one movable part and does not rely on any object shape or structure priors.
 </details>
 
-### 4. PARIS: Part-level Reconstruction and Motion Analysis for Articulated Objects
+### 4. REACTO: Reconstructing Articulated Objects from a Single Video
+*REACTO, CVPR 2024*
+
+[📄 Paper](https://arxiv.org/abs/2404.11151) | [🌐 Project Page](https://chaoyuesong.github.io/REACTO/) | [💻 Code](https://github.com/ChaoyueSong/MoDA)
+- Level: Category-Agnostic
+- Dataset: PartNet-Mobility
+- Input: RGB Sequence
+<details span>
+<summary><b>Abstract</b></summary>
+<br>
+
+In this paper, we address the challenge of reconstructing general articulated 3D objects from a single video. Existing works employing dynamic neural radiance fields have advanced the modeling of articulated objects like humans and animals from videos, but face challenges with piece-wise rigid general articulated objects due to limitations in their deformation models. To tackle this, we propose Quasi-Rigid Blend Skinning, a novel deformation model that enhances the rigidity of each part while maintaining flexible deformation of the joints. Our primary insight combines three distinct approaches: 1) an enhanced bone rigging system for improved component modeling, 2) the use of quasi-sparse skinning weights to boost part rigidity and reconstruction fidelity, and 3) the application of geodesic point assignment for precise motion and seamless deformation. Our method outperforms previous works in producing higher-fidelity 3D reconstructions of general articulated objects, as demonstrated on both real and synthetic datasets.
+</details>
+
+### 5. PARIS: Part-level Reconstruction and Motion Analysis for Articulated Objects
 *PARIS, ICCV 2023*
 
 [📄 Paper](https://arxiv.org/abs/2308.07391) | [🌐 Project Page](https://3dlg-hcvc.github.io/paris/) | [💻 Code](https://github.com/3dlg-hcvc/paris)
@@ -506,7 +523,7 @@ We address the problem of building digital twins of unknown articulated objects 
 We design a self-supervised approach without relying any 3D supervision, semantic or motion annotations. The key idea is that we separate the parts from two-state observations by leveraging motion as a cue. Since the motion accounts for the inconsistency between two states, we optimize the motion parameters by registering the moving parts from the input states t to a canonical state t*. During registration, the component that agrees with the transformation is extracted as the movable part. And the one remaining still is extracted as the static part.
 </details>
 
-### 5. CARTO: Category and Joint Agnostic Reconstruction of ARTiculated Objects
+### 6. CARTO: Category and Joint Agnostic Reconstruction of ARTiculated Objects
 *CARTO, CVPR 2023*
 
 [📄 Paper](https://arxiv.org/abs/2303.15782) | [🌐 Project Page](http://carto.cs.uni-freiburg.de/) | [💻 Code](https://github.com/robot-learning-freiburg/CARTO)
@@ -520,7 +537,7 @@ We design a self-supervised approach without relying any 3D supervision, semanti
 We present CARTO, a novel approach for reconstructing multiple articulated objects from a single stereo RGB observation. We use implicit object-centric representations and learn a single geometry and articulation decoder for multiple object categories. Despite training on multiple categories, our decoder achieves a comparable reconstruction accuracy to methods that train bespoke decoders separately for each category. Combined with our stereo image encoder we infer the 3D shape, 6D pose, size, joint type, and the joint state of multiple unknown objects in a single forward pass. Our method achieves a 20.4% absolute improvement in mAP 3D IOU50 for novel instances when compared to a two-stage pipeline. Inference time is fast and can run on a NVIDIA TITAN XP GPU at 1 HZ for eight or less objects present. While only trained on simulated data, CARTO transfers to real-world object instances. Code and evaluation data is linked below.
 </details>
 
-### 6. Building Digital Twins of Articulated Objects and Scenes through Interactive Perception
+### 7. Building Digital Twins of Articulated Objects and Scenes through Interactive Perception
 *Ditto, Thesis*
 
 [📄 Paper](https://hdl.handle.net/2152/119137)
@@ -532,7 +549,7 @@ We present CARTO, a novel approach for reconstructing multiple articulated objec
 nan
 </details>
 
-### 7. NAISR: A 3D Neural Additive Model for Interpretable Shape Representation
+### 8. NAISR: A 3D Neural Additive Model for Interpretable Shape Representation
 *NAISR, Arxiv 2023*
 
 [📄 Paper](https://arxiv.org/abs/2303.09234) | [💻 Code](https://github.com/uncbiag/NAISR)
@@ -544,7 +561,7 @@ nan
 Deep implicit functions (DIFs) have emerged as a powerful paradigm for many computer vision tasks such as 3D shape reconstruction, generation, registration, completion, editing, and understanding. However, given a set of 3D shapes with associated covariates there is at present no shape representation method which allows to precisely represent the shapes while capturing the individual dependencies on each covariate. Such a method would be of high utility to researchers to discover knowledge hidden in a population of shapes. For scientific shape discovery, we propose a 3D Neural Additive Model for Interpretable Shape Representation (NAISR) which describes individual shapes by deforming a shape atlas in accordance to the effect of disentangled covariates. Our approach captures shape population trends and allows for patient-specific predictions through shape transfer. NAISR is the first approach to combine the benefits of deep implicit shape representations with an atlas deforming according to specified covariates. We evaluate NAISR with respect to shape reconstruction, shape disentanglement, shape evolution, and shape transfer on three datasets: 1) Starman, a simulated 2D shape dataset; 2) the ADNI hippocampus 3D shape dataset; and 3) a pediatric airway 3D shape dataset. Our experiments demonstrate that Starman achieves excellent shape reconstruction performance while retaining interpretability.
 </details>
 
-### 8. 3D Implicit Transporter for Temporally Consistent Keypoint Discovery
+### 9. 3D Implicit Transporter for Temporally Consistent Keypoint Discovery
 *3D Implicit Transporter, ICCV 2023*
 
 [📄 Paper](https://arxiv.org/abs/2309.05098) | [💻 Code](https://github.com/zhongcl-thu/3D-Implicit-Transporter)
@@ -558,7 +575,7 @@ Deep implicit functions (DIFs) have emerged as a powerful paradigm for many comp
 Keypoint-based representation has proven advantageous in various visual and robotic tasks. However, the existing 2D and 3D methods for detecting keypoints mainly rely on geometric consistency to achieve spatial alignment, neglecting temporal consistency. To address this issue, the Transporter method was introduced for 2D data, which reconstructs the target frame from the source frame to incorporate both spatial and temporal information. However, the direct application of the Transporter to 3D point clouds is infeasible due to their structural differences from 2D images. Thus, we propose the first 3D version of the Transporter, which leverages hybrid 3D representation, cross attention, and implicit reconstruction. We apply this new learning system on 3D articulated objects and nonrigid animals (humans and rodents) and show that learned keypoints are spatio-temporally consistent. Additionally, we propose a closed-loop control strategy that utilizes the learned keypoints for 3D object manipulation and demonstrate its superior performance.
 </details>
 
-### 9. Template-free Articulated Neural Point Clouds for Reposable View Synthesis
+### 10. Template-free Articulated Neural Point Clouds for Reposable View Synthesis
 *Uzolas et al., NIPS 2023*
 
 [📄 Paper](https://arxiv.org/abs/2305.19065) | [💻 Code](https://github.com/lukasuz/Articulated-Point-NeRF)
@@ -572,7 +589,7 @@ Keypoint-based representation has proven advantageous in various visual and robo
 Dynamic Neural Radiance Fields (NeRFs) achieve remarkable visual quality when synthesizing novel views of time-evolving 3D scenes. However, the common reliance on backward deformation fields makes reanimation of the captured object poses challenging. Moreover, the state of the art dynamic models are often limited by low visual fidelity, long reconstruction time or specificity to narrow application domains. In this paper, we present a novel method utilizing a point-based representation and Linear Blend Skinning (LBS) to jointly learn a Dynamic NeRF and an associated skeletal model from even sparse multi-view video. Our forward-warping approach achieves state-of-the-art visual fidelity when synthesizing novel views and poses while significantly reducing the necessary learning time when compared to existing work. We demonstrate the versatility of our representation on a variety of articulated objects from common datasets and obtain reposable 3D reconstructions without the need of object-specific skeletal templates.
 </details>
 
-### 10. Ditto: Building Digital Twins of Articulated Objects from Interaction
+### 11. Ditto: Building Digital Twins of Articulated Objects from Interaction
 *Ditto, CVPR 2022*
 
 [📄 Paper](https://arxiv.org/abs/2202.08227) | [🌐 Project Page](https://rpl.cs.utexas.edu/publications/2022/06/19/jiang-cvpr22-ditto/) | [💻 Code](https://github.com/UT-Austin-RPL/Ditto)
@@ -586,7 +603,7 @@ Dynamic Neural Radiance Fields (NeRFs) achieve remarkable visual quality when sy
 Digitizing physical objects into the virtual world has the potential to unlock new research and applications in embodied AI and mixed reality. This work focuses on recreating interactive digital twins of real-world articulated objects, which can be directly imported into virtual environments. We introduce Ditto to learn articulation model estimation and 3D geometry reconstruction of an articulated object through interactive perception. Given a pair of visual observations of an articulated object before and after interaction, Ditto reconstructs part-level geometry and estimates the articulation model of the object. We employ implicit neural representations for joint geometry and articulation modeling. Our experiments show that Ditto effectively builds digital twins of articulated objects in a category-agnostic way. We also apply Ditto to real-world objects and deploy the recreated digital twins in physical simulation.
 </details>
 
-### 11. CLA-NeRF: Category-Level Articulated Neural Radiance Field
+### 12. CLA-NeRF: Category-Level Articulated Neural Radiance Field
 *CLA-NeRF, ICRA 2022*
 
 [📄 Paper](https://arxiv.org/abs/2202.00181)
@@ -600,7 +617,7 @@ Digitizing physical objects into the virtual world has the potential to unlock n
 We address the task of predicting what parts of an object can open and how they move when they do so. The input is a single image of an object, and as output we detect what parts of the object can open, and the motion parameters describing the articulation of each openable part. To tackle this task, we create two datasets of 3D objects: OPDSynth based on existing synthetic objects, and OPDReal based on RGBD reconstructions of real objects. We then design OPDRCNN, a neural architecture that detects openable parts and predicts their motion parameters. Our experiments show that this is a challenging task especially when considering generalization across object categories, and the limited amount of information in a single image. Our architecture outperforms baselines and prior work especially for RGB image inputs.
 </details>
 
-### 12. Watch It Move: Unsupervised Discovery of 3D Joints for Re-Posing of Articulated Objects
+### 13. Watch It Move: Unsupervised Discovery of 3D Joints for Re-Posing of Articulated Objects
 *Watch It Move, CVPR 2022*
 
 [📄 Paper](https://arxiv.org/abs/2112.11347) | [🌐 Project Page](https://nvlabs.github.io/watch-it-move/) | [💻 Code](https://github.com/NVlabs/watch-it-move)
@@ -614,7 +631,7 @@ We address the task of predicting what parts of an object can open and how they 
 Rendering articulated objects while controlling their poses is critical to applications such as virtual reality or animation for movies. Manipulating the pose of an object, however, requires the understanding of its underlying structure, that is, its joints and how they interact with each other. Unfortunately, assuming the structure to be known, as existing methods do, precludes the ability to work on new object categories. We propose to learn both the appearance and the structure of previously unseen articulated objects by observing them move from multiple views, with no joints annotation supervision, or information about the structure. We observe that 3D points that are static relative to one another should belong to the same part, and that adjacent parts that move relative to each other must be connected by a joint. To leverage this insight, we model the object parts in 3D as ellipsoids, which allows us to identify joints. We combine this explicit representation with an implicit one that compensates for the approximation introduced. We show that our method works for different structures, from quadrupeds, to single-arm robots, to humans.
 </details>
 
-### 13. Self-supervised Neural Articulated Shape and Appearance Models
+### 14. Self-supervised Neural Articulated Shape and Appearance Models
 *NASAM, CVPR 2022*
 
 [📄 Paper](https://arxiv.org/abs/2205.08525) | [🌐 Project Page](https://weify627.github.io/nasam/)
@@ -628,7 +645,7 @@ Rendering articulated objects while controlling their poses is critical to appli
 Learning geometry, motion, and appearance priors of object classes is important for the solution of a large variety of computer vision problems. While the majority of approaches has focused on static objects, dynamic objects, especially with controllable articulation, are less explored. We propose a novel approach for learning a representation of the geometry, appearance, and motion of a class of articulated objects given only a set of color images as input. In a self-supervised manner, our novel representation learns shape, appearance, and articulation codes that enable independent control of these semantic dimensions. Our model is trained end-to-end without requiring any articulation annotations. Experiments show that our approach performs well for different joint types, such as revolute and prismatic joints, as well as different combinations of these joints. Compared to state of the art that uses direct 3D supervision and does not output appearance, we recover more faithful geometry and appearance from 2D observations only. In addition, our representation enables a large variety of applications, such as few-shot reconstruction, the generation of novel articulations, and novel view-synthesis.
 </details>
 
-### 14. NARF22: Neural Articulated Radiance Fields for Configuration-Aware Rendering
+### 15. NARF22: Neural Articulated Radiance Fields for Configuration-Aware Rendering
 *NARF22, IROS 2022*
 
 [📄 Paper](https://arxiv.org/abs/2210.01166) | [🌐 Project Page](https://progress.eecs.umich.edu/projects/narf/)
@@ -641,7 +658,7 @@ Learning geometry, motion, and appearance priors of object classes is important 
 Articulated objects pose a unique challenge for robotic perception and manipulation. Their increased number of degrees-of-freedom makes tasks such as localization computationally difficult, while also making the process of real-world dataset collection unscalable. With the aim of addressing these scalability issues, we propose Neural Articulated Radiance Fields (NARF22), a pipeline which uses a fully-differentiable, configuration-parameterized Neural Radiance Field (NeRF) as a means of providing high quality renderings of articulated objects. NARF22 requires no explicit knowledge of the object structure at inference time. We propose a two-stage parts-based training mechanism which allows the object rendering models to generalize well across the configuration space even if the underlying training data has as few as one configuration represented. We demonstrate the efficacy of NARF22 by training configurable renderers on a real-world articulated tool dataset collected via a Fetch mobile manipulation robot. We show the applicability of the model to gradient-based inference methods through a configuration estimation and 6 degree-of-freedom pose refinement task.
 </details>
 
-### 15. Unsupervised Pose-Aware Part Decomposition for 3D Articulated Objects
+### 16. Unsupervised Pose-Aware Part Decomposition for 3D Articulated Objects
 *PPD, ECCV 2021*
 
 [📄 Paper](https://arxiv.org/abs/2110.04411)
@@ -655,7 +672,7 @@ Articulated objects pose a unique challenge for robotic perception and manipulat
 Articulated objects exist widely in the real world. However, previous 3D generative methods for unsupervised part decomposition are unsuitable for such objects, because they assume a spatially fixed part location, resulting in inconsistent part parsing. In this paper, we propose PPD (unsupervised Pose-aware Part Decomposition) to address a novel setting that explicitly targets man-made articulated objects with mechanical joints, considering the part poses. We show that category-common prior learning for both part shapes and poses facilitates the unsupervised learning of (1) part decomposition with non-primitive-based implicit representation, and (2) part pose as joint parameters under single-frame shape supervision. We evaluate our method on synthetic and real datasets, and we show that it outperforms previous works in consistent part parsing of the articulated objects based on comparable part pose estimation performance to the supervised baseline
 </details>
 
-### 16. A-SDF: Learning Disentangled Signed Distance Functions for Articulated Shape Representation
+### 17. A-SDF: Learning Disentangled Signed Distance Functions for Articulated Shape Representation
 *A-SDF, ICCV 2021*
 
 [📄 Paper](https://arxiv.org/abs/2104.07645) | [🌐 Project Page](https://jitengmu.github.io/A-SDF/) | [💻 Code](https://github.com/JitengMu/A-SDF)
@@ -669,7 +686,7 @@ Articulated objects exist widely in the real world. However, previous 3D generat
 Recent work has made significant progress on using implicit functions, as a continuous representation for 3D rigid object shape reconstruction. However, much less effort has been devoted to modeling general articulated objects. Compared to rigid objects, articulated objects have higher degrees of freedom, which makes it hard to generalize to unseen shapes. To deal with the large shape variance, we introduce Articulated Signed Distance Functions (A-SDF) to represent articulated shapes with a disentangled latent space, where we have separate codes for encoding shape and articulation. With this disentangled continuous representation, we demonstrate that we can control the articulation input and animate unseen instances with unseen joint angles. Furthermore, we propose a Test-Time Adaptation inference algorithm to adjust our model during inference. We demonstrate our model generalize well to out-of-distribution and unseen data, e.g., partial point clouds and real-world depth images.
 </details>
 
-### 17. StrobeNet: Category-Level Multiview Reconstruction of Articulated Objects
+### 18. StrobeNet: Category-Level Multiview Reconstruction of Articulated Objects
 *StrobeNet, Arxiv 2021*
 
 [📄 Paper](https://arxiv.org/abs/2105.08016) | [🌐 Project Page](https://dzhange.github.io/StrobeNet/)
