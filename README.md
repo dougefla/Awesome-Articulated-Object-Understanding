@@ -5,6 +5,9 @@ A curated list of resources for articulated objects understanding, including art
 <summary><b>Update log</b></summary>
 <br>
 
+**2024/08/30**
+- Add 1 paper: OP-Align
+
 **2024/07/31**
 - Add 3 papers: MARS, RoCap, Articulate your NeRF
 - Fix: Arxiv -> arXiv
@@ -205,7 +208,21 @@ The ability to estimate joint parameters is essential for various applications i
 Precise perception of articulated objects is vital for empowering service robots. Recent studies mainly focus on point cloud, a single-modal approach, often neglecting vital texture and lighting details and assuming ideal conditions like optimal viewpoints, unrepresentative of real-world scenarios. To address these limitations, we introduce MARS, a novel framework for articulated object characterization. It features a multi-modal fusion module utilizing multi-scale RGB features to enhance point cloud features, coupled with reinforcement learning-based active sensing for autonomous optimization of observation viewpoints. In experiments conducted with various articulated object instances from the PartNet-Mobility dataset, our method outperformed current state-of-the-art methods in joint parameter estimation accuracy. Additionally, through active sensing, MARS further reduces errors, demonstrating enhanced efficiency in handling suboptimal viewpoints. Furthermore, our method effectively generalizes to real-world articulated objects, enhancing robot interactions.
 </details>
 
-### 3. Building Rearticulable Models for Arbitrary 3D Objects from 4D Point Clouds
+### 3. OP-Align: Object-level and Part-level Alignment for Self-supervised Category-level Articulated Object Pose Estimation
+*OP-Align, ECCV 2024*
+
+[📄 Paper](https://arxiv.org/abs/2408.16547) | [💻 Code](https://github.com/YC-Che/OP-Align)
+- Level: Category-Level
+- Dataset: Novel dataset, available in github
+- Input: Single RGB-D
+<details span>
+<summary><b>Abstract</b></summary>
+<br>
+
+Category-level articulated object pose estimation focuses on the pose estimation of unknown articulated objects within known categories. Despite its significance, this task remains challenging due to the varying shapes and poses of objects, expensive dataset annotation costs, and complex real-world environments. In this paper, we propose a novel self-supervised approach that leverages a single-frame point cloud to solve this task. Our model consistently generates reconstruction with a canonical pose and joint state for the entire input object, and it estimates object-level poses that reduce overall pose variance and part-level poses that align each part of the input with its corresponding part of the reconstruction. Experimental results demonstrate that our approach significantly outperforms previous self-supervised methods and is comparable to the state-of-the-art supervised methods. To assess the performance of our model in real-world scenarios, we also introduce a new real-world articulated object benchmark dataset.
+</details>
+
+### 4. Building Rearticulable Models for Arbitrary 3D Objects from 4D Point Clouds
 *Liu et al., CVPR 2023*
 
 [📄 Paper](https://arxiv.org/abs/2306.00979) | [🌐 Project Page](https://stevenlsw.github.io/reart/) | [💻 Code](https://github.com/stevenlsw/reart)
@@ -219,7 +236,7 @@ Precise perception of articulated objects is vital for empowering service robots
 We build rearticulable models for arbitrary everyday man-made objects containing an arbitrary number of parts that are connected together in arbitrary ways via 1 degree-of-freedom joints. Given point cloud videos of such everyday objects, our method identifies the distinct object parts, what parts are connected to what other parts, and the properties of the joints connecting each part pair. We do this by jointly optimizing the part segmentation, transformation, and kinematics using a novel energy minimization framework. Our inferred animatable models, enables retargeting to novel poses with sparse point correspondences guidance. We test our method on a new articulating robot dataset, and the Sapiens dataset with common daily objects, as well as real-world scans. Experiments show that our method outperforms two leading prior works on various metrics.
 </details>
 
-### 4. Category-Level Articulated Object 9D Pose Estimation via Reinforcement Learning
+### 5. Category-Level Articulated Object 9D Pose Estimation via Reinforcement Learning
 *ArtPERL, MM 2023*
 
 [📄 Paper](https://dl.acm.org/doi/10.1145/3581783.3611852)
@@ -233,7 +250,7 @@ We build rearticulable models for arbitrary everyday man-made objects containing
 Human life is populated with articulated objects. Current category-level articulated object 9D pose estimation (Articulated Object 9D Pose Estimation, ArtOPE) methods usually meet the challenges of shared object representation requirement, kinematics-agnostic pose modeling and self-occlusions. In this paper, we propose a novel framework called Articulated object 9D Pose Estimation via Reinforcement Learning (ArtPERL), which formulates the category-level ArtOPE as a reinforcement learning problem. Given a point cloud or RGB-D image input, ArtPERL firstly retrieves the part-sensitive articulated object as reference point cloud, and then introduces a joint-centric pose modeling strategy that estimates 9D pose by fitting joint states via reinforced agent training. Finally, we further propose a pose optimization that refine the predicted 9D pose considering kinematic constraints. We evaluate our ArtPERL on various datasets ranging from synthetic point cloud to real-world multi-hinged object. Experiments demonstrate the superior performance and robustness of our ArtPERL. Our work provides a new perspective on category-level articulated object 9D pose estimation and has the potential to be applied in many fields, including robotics, augmented reality, and autonomous driving.
 </details>
 
-### 5. Towards Real-World Category-level Articulation Pose Estimation
+### 6. Towards Real-World Category-level Articulation Pose Estimation
 *CAPER, TIP 2022*
 
 [📄 Paper](https://ieeexplore.ieee.org/document/9670684)
@@ -247,7 +264,7 @@ Human life is populated with articulated objects. Current category-level articul
 Human life is populated with articulated objects. Current Category-level Articulation Pose Estimation (CAPE) methods are studied under the single-instance setting with a fixed kinematic structure for each category. Considering these limitations, we reform this problem setting for real-world environments and suggest a CAPE-Real (CAPER) task setting. This setting allows varied kinematic structures within a semantic category, and multiple instances to co-exist in an observation of real world. To support this task, we build an articulated model repository ReArt-48 and present an efficient dataset generation pipeline, which contains Fast Articulated Object Modeling (FAOM) and Semi-Authentic MixEd Reality Technique (SAMERT). Accompanying the pipeline, we build a large-scale mixed reality dataset ReArtMix and a real world dataset ReArtVal. We also propose an effective framework ReArtNOCS that exploits RGB-D input to estimate part-level pose for multiple instances in a single forward pass. Extensive experiments demonstrate that the proposed ReArtNOCS can achieve good performance on both CAPER and CAPE settings. We believe it could serve as a strong baseline for future research on the CAPER task.
 </details>
 
-### 6. Unsupervised Kinematic Motion Detection for Part-segmented 3D Shape Collections
+### 7. Unsupervised Kinematic Motion Detection for Part-segmented 3D Shape Collections
 *UKMD, SIGGRAPH 2022*
 
 [📄 Paper](https://arxiv.org/abs/2206.08497) | [💻 Code](https://github.com/xxh43/ukmd)
@@ -261,7 +278,7 @@ Human life is populated with articulated objects. Current Category-level Articul
 3D models of manufactured objects are important for populating virtual worlds and for synthetic data generation for vision and robotics. To be most useful, such objects should be articulated: their parts should move when interacted with. While articulated object datasets exist, creating them is labor-intensive. Learning-based prediction of part motions can help, but all existing methods require annotated training data. In this paper, we present an unsupervised approach for discovering articulated motions in a part-segmented 3D shape collection. Our approach is based on a concept we call category closure: any valid articulation of an object's parts should keep the object in the same semantic category (e.g. a chair stays a chair). We operationalize this concept with an algorithm that optimizes a shape's part motion parameters such that it can transform into other shapes in the collection. We evaluate our approach by using it to re-discover part motions from the PartNet-Mobility dataset. For almost all shape categories, our method's predicted motion parameters have low error with respect to ground truth annotations, outperforming two supervised motion prediction methods.
 </details>
 
-### 7. Distributional Depth-Based Estimation of Object Articulation Models
+### 8. Distributional Depth-Based Estimation of Object Articulation Models
 *DUST-Net, CoRL 2021*
 
 [📄 Paper](https://arxiv.org/abs/2108.05875v1) | [🌐 Project Page](https://pearl-utexas.github.io/DUST-net/) | [💻 Code](https://github.com/Pearl-UTexas/DUST-net)
@@ -275,7 +292,7 @@ Human life is populated with articulated objects. Current Category-level Articul
 We propose a method that efficiently learns distributions over articulation model parameters directly from depth images without the need to know articulation model categories a priori. By contrast, existing methods that learn articulation models from raw observations typically only predict point estimates of the model parameters, which are insufficient to guarantee the safe manipulation of articulated objects. Our core contributions include a novel representation for distributions over rigid body transformations and articulation model parameters based on screw theory, von Mises-Fisher distributions, and Stiefel manifolds. Combining these concepts allows for an efficient, mathematically sound representation that implicitly satisfies the constraints that rigid body transformations and articulations must adhere to. Leveraging this representation, we introduce a novel deep learning based approach, DUST-net, that performs category-independent articulation model estimation while also providing model uncertainties. We evaluate our approach on several benchmarking datasets and real-world objects and compare its performance with two current state-of-the-art methods. Our results demonstrate that DUST-net can successfully learn distributions over articulation models for novel objects across articulation model categories, which generate point estimates with better accuracy than state-of-the-art methods and effectively capture the uncertainty over predicted model parameters due to noisy inputs.
 </details>
 
-### 8. ScrewNet: Category-Independent Articulation Model Estimation From Depth Images Using Screw Theory
+### 9. ScrewNet: Category-Independent Articulation Model Estimation From Depth Images Using Screw Theory
 *ScrewNet, ICRA 2021*
 
 [📄 Paper](https://arxiv.org/abs/2008.10518) | [🌐 Project Page](https://pearl-utexas.github.io/ScrewNet/) | [💻 Code](https://github.com/Pearl-UTexas/ScrewNet)
@@ -289,7 +306,7 @@ We propose a method that efficiently learns distributions over articulation mode
 Robots in human environments will need to interact with a wide variety of articulated objects such as cabinets, drawers, and dishwashers while assisting humans in performing day-to-day tasks. Existing methods either require objects to be textured or need to know the articulation model category a priori for estimating the model parameters for an articulated object. We propose ScrewNet, a novel approach that estimates an object’s articulation model directly from depth images without requiring a priori knowledge of the articulation model category. ScrewNet uses screw theory to unify the representation of different articulation types and perform category-independent articulation model estimation. We evaluate our approach on two benchmarking datasets and compare its performance with a current state-of-the-art method. Results demonstrate that ScrewNet can successfully estimate the articulation models and their parameters for novel objects across articulation model categories with better on average accuracy than the prior state-of-the-art method.
 </details>
 
-### 9. Nothing But Geometric Constraints: A Model-Free Method for Articulated Object Pose Estimation
+### 10. Nothing But Geometric Constraints: A Model-Free Method for Articulated Object Pose Estimation
 *GC-Pose, arXiv 2020*
 
 [📄 Paper](https://arxiv.org/abs/2012.00088)
@@ -303,7 +320,7 @@ Robots in human environments will need to interact with a wide variety of articu
 We propose an unsupervised vision-based system to estimate the joint configurations of the robot arm from a sequence of RGB or RGB-D images without knowing the model a priori, and then adapt it to the task of category-independent articulated object pose estimation. We combine a classical geometric formulation with deep learning and extend the use of epipolar constraint to multi-rigid-body systems to solve this task. Given a video sequence, the optical flow is estimated to get the pixel-wise dense correspondences. After that, the 6D pose is computed by a modified PnP algorithm. The key idea is to leverage the geometric constraints and the constraint between multiple frames. Furthermore, we build a synthetic dataset with different kinds of robots and multi-joint articulated objects for the research of vision-based robot control and robotic vision. We demonstrate the effectiveness of our method on three benchmark datasets and show that our method achieves higher accuracy than the state-of-the-art supervised methods in estimating joint angles of robot arms and articulated objects.
 </details>
 
-### 10. Category-Level Articulated Object Pose Estimation
+### 11. Category-Level Articulated Object Pose Estimation
 *ANCSH, CVPR 2020*
 
 [📄 Paper](https://arxiv.org/abs/1912.11913) | [🌐 Project Page](https://articulated-pose.github.io/) | [💻 Code](https://github.com/dragonlong/articulated-pose)
@@ -317,7 +334,7 @@ We propose an unsupervised vision-based system to estimate the joint configurati
 This project addresses the task of category-level pose estimation for articulated objects from a single depth image. We present a novel category-level approach that correctly accommodates object instances previously unseen during training. We introduce Articulation-aware Normalized Coordinate Space Hierarchy (ANCSH) - a canonical representation for different articulated objects in a given category. As the key to achieve intra-category generalization, the representation constructs a canonical object space as well as a set of canonical part spaces. The canonical object space normalizes the object orientation,scales and articulations (e.g. joint parameters and states) while each canonical part space further normalizes its part pose and scale. We develop a deep network based on PointNet++ that predicts ANCSH from a single depth point cloud, including part segmentation, normalized coordinates, and joint parameters in the canonical object space. By leveraging the canonicalized joints, we demonstrate: 1) improved performance in part pose and scale estimations using the induced kinematic constraints from joints; 2) high accuracy for joint parameter estimation in camera space.
 </details>
 
-### 11. RPM-Net: Recurrent Prediction of Motion and Parts from Point Cloud
+### 12. RPM-Net: Recurrent Prediction of Motion and Parts from Point Cloud
 *RPM-Net, ToG 2019*
 
 [📄 Paper](https://dl.acm.org/doi/10.1145/3355089.3356573) | [💻 Code](https://github.com/Salingo/RPM-Net)
@@ -330,7 +347,7 @@ This project addresses the task of category-level pose estimation for articulate
 We introduce RPM-Net, a deep learning-based approach which simultaneously infers movable parts and hallucinates their motions from a single, un-segmented, and possibly partial, 3D point cloud shape. RPM-Net is a novel Recurrent Neural Network (RNN), composed of an encoder-decoder pair with interleaved Long Short-Term Memory (LSTM) components, which together predict a temporal sequence of pointwise displacements for the input point cloud. At the same time, the displacements allow the network to learn movable parts, resulting in a motion-based shape segmentation. Recursive applications of RPM-Net on the obtained parts can predict finer-level part motions, resulting in a hierarchical object segmentation. Furthermore, we develop a separate network to estimate part mobilities, e.g., per-part motion parameters, from the segmented motion sequence. Both networks learn deep predictive models from a training set that exemplifies a variety of mobilities for diverse objects. We show results of simultaneous motion and part predictions from synthetic and real scans of 3D objects exhibiting a variety of part mobilities, possibly involving multiple movable parts.
 </details>
 
-### 12. Learning to Generalize Kinematic Models to Novel Objects
+### 13. Learning to Generalize Kinematic Models to Novel Objects
 *Abbatematteo et al., CoRL 2019*
 
 [📄 Paper](https://proceedings.mlr.press/v100/abbatematteo20a.html) | [💻 Code](https://github.com/babbatem/SyntheticArticulatedData)
