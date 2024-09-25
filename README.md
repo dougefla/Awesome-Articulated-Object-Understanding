@@ -5,6 +5,9 @@ A curated list of resources for articulated objects understanding, including art
 <summary><b>Update log</b></summary>
 <br>
 
+**2024/09/25**
+- Add 1 paper: AOT
+
 **2024/09/18**
 - Add 4 papers: LEIA, DexSim2Real$^2$, ManiDext, NARF24
 
@@ -534,12 +537,12 @@ This hybrid representation is implemented through a Gaussian-Mesh-Pixel binding 
 
 [📄 Paper](https://arxiv.org/abs/2409.08750) | [🌐 Project Page](https://jiangtaoran.github.io/dexsim2real2_website/)
 - Dataset: Shape2Motion, PartNet-Mobility, 
-- Input: Articulated object manipulation is ubiquitous in daily life. In this paper, we present DexSim2Real2, a novel robot learning framework for goal-conditioned articulated object manipulation using both two-finger grippers and multi-finger dexterous hands. The key of our framework is constructing an explicit world model of unseen articulated objects through active one-step interactions. This explicit world model enables sampling-based model predictive control to plan trajectories achieving different manipulation goals without needing human demonstrations or reinforcement learning. It first predicts an interaction motion using an affordance estimation network trained on self-supervised interaction data or videos of human manipulation from the internet. After executing this interaction on the real robot, the framework constructs a digital twin of the articulated object in simulation based on the two point clouds before and after the interaction. For dexterous multi-finger manipulation, we propose to utilize eigengrasp to reduce the high-dimensional action space, enabling more efficient trajectory searching. Extensive experiments validate the framework's effectiveness for precise articulated object manipulation in both simulation and the real world using a two-finger gripper and a 16-DoF dexterous hand. The robust generalizability of the explicit world model also enables advanced manipulation strategies, such as manipulating with different tools.
+- Input: Point Cloud
 <details span>
 <summary><b>Abstract</b></summary>
 <br>
 
-nan
+Articulated object manipulation is ubiquitous in daily life. In this paper, we present DexSim2Real2, a novel robot learning framework for goal-conditioned articulated object manipulation using both two-finger grippers and multi-finger dexterous hands. The key of our framework is constructing an explicit world model of unseen articulated objects through active one-step interactions. This explicit world model enables sampling-based model predictive control to plan trajectories achieving different manipulation goals without needing human demonstrations or reinforcement learning. It first predicts an interaction motion using an affordance estimation network trained on self-supervised interaction data or videos of human manipulation from the internet. After executing this interaction on the real robot, the framework constructs a digital twin of the articulated object in simulation based on the two point clouds before and after the interaction. For dexterous multi-finger manipulation, we propose to utilize eigengrasp to reduce the high-dimensional action space, enabling more efficient trajectory searching. Extensive experiments validate the framework's effectiveness for precise articulated object manipulation in both simulation and the real world using a two-finger gripper and a 16-DoF dexterous hand. The robust generalizability of the explicit world model also enables advanced manipulation strategies, such as manipulating with different tools.
 </details>
 
 ### 5. PARIS: Part-level Reconstruction and Motion Analysis for Articulated Objects
@@ -720,6 +723,7 @@ Articulated objects and their representations pose a difficult problem for robot
 
 [📄 Paper](https://arxiv.org/abs/2409.06703) | [🌐 Project Page](https://archana1998.github.io/leia/) | [💻 Code](https://github.com/archana1998/LEIA/)
 - Dataset: PartNet-Mobility
+- Input: RGB Images
 <details span>
 <summary><b>Abstract</b></summary>
 <br>
@@ -908,7 +912,20 @@ We present StrobeNet, a method for category-level 3D reconstruction of articulat
 Vision Language Models (VLMs) have received significant attention in recent years in the robotics community. VLMs are shown to be able to perform complex visual reasoning and scene understanding tasks, which makes them regarded as a potential universal solution for general robotics problems such as manipulation and navigation. However, previous VLMs for robotics such as RT-1, RT-2, and ManipLLM have focused on directly learning robot-centric actions. Such approaches require collecting a significant amount of robot interaction data, which is extremely costly in the real world. Thus, we propose A3VLM, an object-centric, actionable, articulation-aware vision language model. A3VLM focuses on the articulation structure and action affordances of objects. Its representation is robot-agnostic and can be translated into robot actions using simple action primitives. Extensive experiments in both simulation benchmarks and real-world settings demonstrate the effectiveness and stability of A3VLM.
 </details>
 
-### 2. Learning to Infer Kinematic Hierarchies for Novel Object Instances
+### 2. Discovering Conceptual Knowledge with Analytic Ontology Templates for Articulated Objects
+*AOT, arXiv 2024*
+
+[📄 Paper](https://arxiv.org/abs/2409.11702)
+- Dataset: PartNet-Mobility
+- Input: Point Cloud
+<details span>
+<summary><b>Abstract</b></summary>
+<br>
+
+Human cognition can leverage fundamental conceptual knowledge, like geometric and kinematic ones, to appropriately perceive, comprehend and interact with novel objects. Motivated by this finding, we aim to endow machine intelligence with an analogous capability through performing at the conceptual level, in order to understand and then interact with articulated objects, especially for those in novel categories, which is challenging due to the intricate geometric structures and diverse joint types of articulated objects. To achieve this goal, we propose Analytic Ontology Template (AOT), a parameterized and differentiable program description of generalized conceptual ontologies. A baseline approach called AOTNet driven by AOTs is designed accordingly to equip intelligent agents with these generalized concepts, and then empower the agents to effectively discover the conceptual knowledge on the structure and affordance of articulated objects. The AOT-driven approach yields benefits in three key perspectives: i) enabling concept-level understanding of articulated objects without relying on any real training data, ii) providing analytic structure information, and iii) introducing rich affordance information indicating proper ways of interaction. We conduct exhaustive experiments and the results demonstrate the superiority of our approach in understanding and then interacting with articulated objects.
+</details>
+
+### 3. Learning to Infer Kinematic Hierarchies for Novel Object Instances
 *Abdul-Rashid et al., ICRA 2021*
 
 [📄 Paper](https://arxiv.org/abs/2110.07911)
@@ -922,7 +939,7 @@ Vision Language Models (VLMs) have received significant attention in recent year
 Manipulating an articulated object requires perceiving itskinematic hierarchy: its parts, how each can move, and howthose motions are coupled. Previous work has explored per-ception for kinematics, but none infers a complete kinematichierarchy on never-before-seen object instances, without relyingon a schema or template. We present a novel perception systemthat achieves this goal. Our system infers the moving parts ofan object and the kinematic couplings that relate them. Toinfer parts, it uses a point cloud instance segmentation neuralnetwork and to infer kinematic hierarchies, it uses a graphneural network to predict the existence, direction, and typeof edges (i.e. joints) that relate the inferred parts. We trainthese networks using simulated scans of synthetic 3D models.We evaluate our system on simulated scans of 3D objects, andwe demonstrate a proof-of-concept use of our system to drivereal-world robotic manipulation.
 </details>
 
-### 3. Towards Understanding Articulated Objects
+### 4. Towards Understanding Articulated Objects
 *Sturm et al., RSSW 2009*
 
 [📄 Paper](http://ais.informatik.uni-freiburg.de/publications/papers/sturm09rss-manip.pdf)
@@ -942,6 +959,7 @@ Robots operating in home environments must be able to interact with articulated 
 
 [📄 Paper](https://arxiv.org/abs/2409.09300) | [🌐 Project Page](https://jiajunzhang16.github.io/manidext/)
 - Dataset: GRAB, ARCTIC
+- Input: A sequence of object motions
 <details span>
 <summary><b>Abstract</b></summary>
 <br>
