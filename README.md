@@ -142,7 +142,7 @@ Openable part detection is the task of detecting the openable parts of an object
 [📄 Paper](https://arxiv.org/abs/2203.16421) | [🌐 Project Page](https://3dlg-hcvc.github.io/OPD/) | [💻 Code](https://github.com/3dlg-hcvc/OPD)
 - Level: Category-Agnostic
 - Dataset: OPDSynth, OPDReal
-- Input: Single Point Cloud
+- Input: Single RGB Image
 <details span>
 <summary><b>Abstract</b></summary>
 <br>
