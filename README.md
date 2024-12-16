@@ -5,6 +5,9 @@ A curated list of resources for articulated objects understanding, including art
 <summary><b>Update log</b></summary>
 <br>
 
+**2024/12/16**
+- Add 1 paper: Articulate-Anything
+
 **2024/10/30**
 - Add 3 papers: SINGAPO, ParaHome, ACDC
 
@@ -65,7 +68,6 @@ A curated list of resources for articulated objects understanding, including art
 - Initiate with 39 papers.
 </br>
 </details>
-
 ## Table of contents
 
 - [Survey](#survey)
@@ -602,7 +604,21 @@ Articulated object manipulation is ubiquitous in daily life. In this paper, we p
 Training robot policies in the real world can be unsafe, costly, and difficult to scale. Simulation serves as an inexpensive and potentially limitless source of training data, but suffers from the semantics and physics disparity between simulated and real-world environments. These discrepancies can be minimized by training in digital twins, which serve as virtual replicas of a real scene but are expensive to generate and cannot produce cross-domain generalization. To address these limitations, we propose the concept of digital cousins, a virtual asset or scene that, unlike a digital twin, does not explicitly model a real-world counterpart but still exhibits similar geometric and semantic affordances. As a result, digital cousins simultaneously reduce the cost of generating an analogous virtual environment while also facilitating better robustness during sim-to-real domain transfer by providing a distribution of similar training scenes. Leveraging digital cousins, we introduce a novel method for their automated creation, and propose a fully automated real-to-sim-to-real pipeline for generating fully interactive scenes and training robot policies that can be deployed zero-shot in the original scene. We find that digital cousin scenes that preserve geometric and semantic affordances can be produced automatically, and can be used to train policies that outperform policies trained on digital twins, achieving 90% vs. 25% success rates under zero-shot sim-to-real transfer. 
 </details>
 
-### 6. PARIS: Part-level Reconstruction and Motion Analysis for Articulated Objects
+### 6. Articulate-Anything: Automatic Modeling of Articulated Objects via a Vision-Language Foundation Model
+*Articulate-Anything, arXiv 2024*
+
+[📄 Paper](https://arxiv.org/abs/2410.13882) | [🌐 Project Page](https://articulate-anything.github.io/) | [💻 Code](https://github.com/vlongle/articulate-anything)
+- Level: Category-Agnostic
+- Dataset: PartNet-Mobility
+- Input: Image, text, videos
+<details span>
+<summary><b>Abstract</b></summary>
+<br>
+
+Interactive 3D simulated objects are crucial in AR/VR, animations, and robotics, driving immersive experiences and advanced automation. However, creating these articulated objects requires extensive human effort and expertise, limiting their broader applications. To overcome this challenge, we present Articulate-Anything, a system that automates the articulation of diverse, complex objects from many input modalities, including text, images, and videos. Articulate-Anything leverages vision-language models (VLMs) to generate code that can be compiled into an interactable digital twin for use in standard 3D simulators. Our system exploits existing 3D asset datasets via a mesh retrieval mechanism, along with an actor-critic system that iteratively proposes, evaluates, and refines solutions for articulating the objects, self-correcting errors to achieve a robust outcome. Qualitative evaluations demonstrate Articulate-Anything's capability to articulate complex and even ambiguous object affordances by leveraging rich grounded inputs. In extensive quantitative experiments on the standard PartNet-Mobility dataset, Articulate-Anything substantially outperforms prior work, increasing the success rate from 8.7-11.6% to 75% and setting a new bar for state-of-the-art performance. We further showcase the utility of our system by generating 3D assets from in-the-wild video inputs, which are then used to train robotic policies for fine-grained manipulation tasks in simulation that go beyond basic pick and place. These policies are then transferred to a real robotic system.
+</details>
+
+### 7. PARIS: Part-level Reconstruction and Motion Analysis for Articulated Objects
 *PARIS, ICCV 2023*
 
 [📄 Paper](https://arxiv.org/abs/2308.07391) | [🌐 Project Page](https://3dlg-hcvc.github.io/paris/) | [💻 Code](https://github.com/3dlg-hcvc/paris)
@@ -616,7 +632,7 @@ Training robot policies in the real world can be unsafe, costly, and difficult t
 We design a self-supervised approach without relying any 3D supervision, semantic or motion annotations. The key idea is that we separate the parts from two-state observations by leveraging motion as a cue. Since the motion accounts for the inconsistency between two states, we optimize the motion parameters by registering the moving parts from the input states t to a canonical state t*. During registration, the component that agrees with the transformation is extracted as the movable part. And the one remaining still is extracted as the static part.
 </details>
 
-### 7. Building Digital Twins of Articulated Objects and Scenes through Interactive Perception
+### 8. Building Digital Twins of Articulated Objects and Scenes through Interactive Perception
 *Ditto, Thesis*
 
 [📄 Paper](https://hdl.handle.net/2152/119137)
