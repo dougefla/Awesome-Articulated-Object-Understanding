@@ -5,6 +5,9 @@ A curated list of resources for articulated objects understanding, including art
 <summary><b>Update log</b></summary>
 <br>
 
+**2026/05/22**
+- Add 1 paper: Sketch2Arti
+
 **2025/3/17**
 - Add 3 paper: GAPS, MeshArt, REArtGS
 
@@ -763,6 +766,20 @@ We propose Neural 3D Articulation Prior (NAP), the first 3D deep generative mode
 <br>
 
 We address the challenge of generating 3D articulated objects in a controllable fashion. Currently, modeling articulated 3D objects is either achieved through laborious manual authoring, or using methods from prior work that are hard to scale and control directly. We leverage the interplay between part shape, connectivity, and motion using a denoising diffusion-based method with attention modules designed to extract correlations between part attributes. Our method takes an object category label and a part connectivity graph as input and generates an object's geometry and motion parameters. The generated objects conform to user-specified constraints on the object category, part shape, and part articulation. Our experiments show that our method outperforms the state-of-the-art in articulated object generation, producing more realistic objects while conforming better to user constraints.
+</details>
+
+### 8. Sketch2Arti: Sketch-based Articulation Modeling of CAD Objects
+*Sketch2Arti, SIGGRAPH 2026*
+
+[📄 Paper](https://arxiv.org/abs/2604.25781) | [🌐 Project Page](https://arlo-yang.github.io/Sketch2Arti/)
+- Level: Category-Agnostic
+- Dataset: SketchMobility
+- Input: Mesh, Sketch
+<details span>
+<summary><b>Abstract</b></summary>
+<br>
+
+Articulation modeling aims to infer movable parts and their motion parameters for a 3D object, enabling interactive animation, simulation, and shape editing. Sketch2Arti is a sketch-based articulation modeling system that lets users specify articulation through simple 2D sketches drawn from a chosen viewpoint. Given an input mesh and user sketches, the approach automatically discovers corresponding movable parts and predicts motion parameters, allowing iterative modeling of multiple articulations on complex objects with fine-grained control. The system is trained in a category-agnostic manner and supports controllable internal completion for shell models lacking interior structures, generating plausible internal components consistent with existing geometry and predicted motion constraints.
 </details>
 
 ## Implicit Representation
