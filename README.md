@@ -10,6 +10,9 @@ A curated list of resources for articulated objects understanding, including art
 - Migrate the paper list from Excel to CSV and update the Markdown generation script
 - Update the articulated-object survey to its Computer Graphics Forum publication
 
+**2026/5/22**
+- Add 1 paper: Sketch2Arti
+
 **2025/3/17**
 - Add 3 paper: GAPS, MeshArt, REArtGS
 
@@ -755,7 +758,21 @@ We design a self-supervised approach without relying any 3D supervision, semanti
 - Level: Category-Level
 ## Generation
 
-### 1. Infinite Mobility: Scalable High-Fidelity Synthesis of Articulated Objects via Procedural Generation
+### 1. Sketch2Arti: Sketch-based Articulation Modeling of CAD Objects
+*Sketch2Arti, SIGGRAPH 2026*
+
+[📄 Paper](https://arxiv.org/abs/2604.25781) | [🌐 Project Page](https://arlo-yang.github.io/Sketch2Arti/)
+- Level: Category-Agnostic
+- Dataset: SketchMobility
+- Input: Mesh, Sketch
+<details span>
+<summary><b>Abstract</b></summary>
+<br>
+
+Articulation modeling aims to infer movable parts and their motion parameters for a 3D object, enabling interactive animation, simulation, and shape editing. In this paper, we present Sketch2Arti, the first sketch-based articulation modeling system for CAD objects. Our key observation is that designers naturally communicate articulation intent through lightweight sketches (e.g., arrows and strokes) that indicate how parts should move, yet translating such sketches into articulated 3D models remains largely manual. Sketch2Arti bridges this gap by enabling users to specify articulation through simple 2D sketches drawn from a chosen viewpoint. Given a CAD model and user sketches, our approach automatically discovers the corresponding movable parts and predicts their motion parameters, allowing iterative modeling of multiple articulations on complex objects with fine-grained control. Importantly, Sketch2Arti is trained in a category-agnostic manner without requiring object category information, leading to strong generalization to diverse objects beyond existing articulation datasets. Moreover, for shell models lacking interior structures, Sketch2Arti supports controllable internal completion guided by user sketches, generating plausible internal components consistent with the existing geometry and predicted motion constraints. Comprehensive experiments and user evaluations demonstrate the effectiveness, controllability, and generalization of Sketch2Arti.
+</details>
+
+### 2. Infinite Mobility: Scalable High-Fidelity Synthesis of Articulated Objects via Procedural Generation
 *Infinite Mobility, arXiv 2025*
 
 [📄 Paper](https://arxiv.org/abs/2503.13424) | [💻 Code](https://github.com/Intern-Nexus/Infinite-Mobility)
@@ -766,7 +783,7 @@ We design a self-supervised approach without relying any 3D supervision, semanti
 Large-scale articulated objects with high quality are desperately needed for multiple tasks related to embodied AI. Most existing methods for creating articulated objects are either data-driven or simulation based, which are limited by the scale and quality of the training data or the fidelity and heavy labour of the simulation. In this paper, we propose Infinite Mobility, a novel method for synthesizing high-fidelity articulated objects through procedural generation. User study and quantitative evaluation demonstrate that our method can produce results that excel current state-of-the-art methods and are comparable to human-annotated datasets in both physics property and mesh quality. Furthermore, we show that our synthetic data can be used as training data for generative models, enabling next-step scaling up.
 </details>
 
-### 2. DIPO: Dual-State Images Controlled Articulated Object Generation Powered by Diverse Data
+### 3. DIPO: Dual-State Images Controlled Articulated Object Generation Powered by Diverse Data
 *DIPO, arXiv 2025*
 
 [📄 Paper](https://arxiv.org/abs/2505.20460)
@@ -780,7 +797,7 @@ Large-scale articulated objects with high quality are desperately needed for mul
 We present DIPO, a novel framework for the controllable generation of articulated 3D objects from a pair of images: one depicting the object in a resting state and the other in an articulated state. Compared to the single-image approach, our dual-image input imposes only a modest overhead for data collection, but at the same time provides important motion information, which is a reliable guide for predicting kinematic relationships between parts. Specifically, we propose a dual-image diffusion model that captures relationships between the image pair to generate part layouts and joint parameters. In addition, we introduce a Chain-of-Thought (CoT) based graph reasoner that explicitly infers part connectivity relationships. To further improve robustness and generalization on complex articulated objects, we develop a fully automated dataset expansion pipeline, named LEGO-Art, that enriches the diversity and complexity of PartNet-Mobility dataset. We propose PM-X, a large-scale dataset of complex articulated 3D objects, accompanied by rendered images, URDF annotations, and textual descriptions. Extensive experiments demonstrate that DIPO significantly outperforms existing baselines in both the resting state and the articulated state, while the proposed PM-X dataset further enhances generalization to diverse and structurally complex articulated objects.
 </details>
 
-### 3. FreeArt3D: Training-Free Articulated Object Generation using 3D Diffusion
+### 4. FreeArt3D: Training-Free Articulated Object Generation using 3D Diffusion
 *FreeArt3D, SIGGRAPH Asia 2025*
 
 [📄 Paper](https://arxiv.org/abs/2510.25765) | [🌐 Project Page](https://czzzzh.github.io/FreeArt3D) | [💻 Code](https://github.com/CzzzzH/FreeArt3D)
@@ -793,7 +810,7 @@ We present DIPO, a novel framework for the controllable generation of articulate
 Articulated 3D objects are central to many applications in robotics, AR/VR, and animation. Recent approaches to modeling such objects either rely on optimization-based reconstruction pipelines that require dense-view supervision or on feed-forward generative models that produce coarse geometric approximations and often overlook surface texture. In contrast, open-world 3D generation of static objects has achieved remarkable success, especially with the advent of native 3D diffusion models such as Trellis. However, extending these methods to articulated objects by training native 3D diffusion models poses significant challenges. In this work, we present FreeArt3D, a training-free framework for articulated 3D object generation. Instead of training a new model on limited articulated data, FreeArt3D repurposes a pre-trained static 3D diffusion model as a powerful shape prior. It extends Score Distillation Sampling into the 3D-to-4D domain by treating articulation as an additional generative dimension. Given a few images captured in different articulation states, FreeArt3D jointly optimizes the object's geometry, texture, and articulation parameters without requiring task-specific training or access to large-scale articulated datasets. Our method generates high-fidelity geometry and textures, accurately predicts underlying kinematic structures, and generalizes well across diverse object categories.
 </details>
 
-### 4. Sync4D: Video Guided Controllable Dynamics for Physics-Based 4D Generation
+### 5. Sync4D: Video Guided Controllable Dynamics for Physics-Based 4D Generation
 *Sync4D, arXiv 2024*
 
 [📄 Paper](https://arxiv.org/abs/2405.16849) | [🌐 Project Page](https://sync4dphys.github.io/)
@@ -805,7 +822,7 @@ Articulated 3D objects are central to many applications in robotics, AR/VR, and 
 In this work, we introduce a novel approach for creating controllable dynamics in 3D-generated Gaussians using casually captured reference videos. Our method transfers the motion of objects from reference videos to a variety of generated 3D Gaussians across different categories, ensuring precise and customizable motion transfer. We achieve this by employing blend skinning-based non-parametric shape reconstruction to extract the shape and motion of reference objects. This process involves segmenting the reference objects into motion-related parts based on skinning weights and establishing shape correspondences with generated target shapes. To address shape and temporal inconsistencies prevalent in existing methods, we integrate physical simulation, driving the target shapes with matched motion. This integration is optimized through a displacement loss to ensure reliable and genuine dynamics. Our approach supports diverse reference inputs, including humans, quadrupeds, and articulated objects, and can generate dynamics of arbitrary length, providing enhanced fidelity and applicability. Unlike methods heavily reliant on diffusion video generation models, our technique offers specific and high-quality motion transfer, maintaining both shape integrity and temporal consistency.
 </details>
 
-### 5. Puppet-Master: Scaling Interactive Video Generation as a Motion Prior for Part-Level Dynamics
+### 6. Puppet-Master: Scaling Interactive Video Generation as a Motion Prior for Part-Level Dynamics
 *Puppet-Master, arXiv 2024*
 
 [📄 Paper](https://arxiv.org/abs/2408.04631) | [🌐 Project Page](http://vgg-puppetmaster.github.io/)
@@ -818,7 +835,7 @@ In this work, we introduce a novel approach for creating controllable dynamics i
 We present Puppet-Master, an interactive video generative model that can serve as a motion prior for part-level dynamics. At test time, given a single image and a sparse set of motion trajectories (i.e., drags), Puppet-Master can synthesize a video depicting realistic part-level motion faithful to the given drag interactions. This is achieved by fine-tuning a large-scale pre-trained video diffusion model, for which we propose a new conditioning architecture to inject the dragging control effectively. More importantly, we introduce the all-to-first attention mechanism, a drop-in replacement for the widely adopted spatial attention modules, which significantly improves generation quality by addressing the appearance and background issues in existing models. Unlike other motion-conditioned video generators that are trained on in-the-wild videos and mostly move an entire object, Puppet-Master is learned from Objaverse-Animation-HQ, a new dataset of curated part-level motion clips. We propose a strategy to automatically filter out sub-optimal animations and augment the synthetic renderings with meaningful motion trajectories. Puppet-Master generalizes well to real images across various categories and outperforms existing methods in a zero-shot manner on a real-world benchmark.
 </details>
 
-### 6. PhysPart: Physically Plausible Part Completion for Interactable Objects
+### 7. PhysPart: Physically Plausible Part Completion for Interactable Objects
 *PhysPart, arXiv 2024*
 
 [📄 Paper](https://www.arxiv.org/abs/2408.13724)
@@ -831,7 +848,7 @@ We present Puppet-Master, an interactive video generative model that can serve a
 Interactable objects are ubiquitous in our daily lives. Recent advances in 3D generative models make it possible to automate the modeling of these objects, benefiting a range of applications from 3D printing to the creation of robot simulation environments. However, while significant progress has been made in modeling 3D shapes and appearances, modeling object physics, particularly for interactable objects, remains challenging due to the physical constraints imposed by inter-part motions. In this paper, we tackle the problem of physically plausible part completion for interactable objects, aiming to generate 3D parts that not only fit precisely into the object but also allow smooth part motions. To this end, we propose a diffusion-based part generation model that utilizes geometric conditioning through classifier-free guidance and formulates physical constraints as a set of stability and mobility losses to guide the sampling process. Additionally, we demonstrate the generation of dependent parts, paving the way toward sequential part generation for objects with complex part-whole hierarchies. Experimentally, we introduce a new metric for measuring physical plausibility based on motion success rates. Our model outperforms existing baselines over shape and physical metrics, especially those that do not adequately model physical constraints. We also demonstrate our applications in 3D printing, robot manipulation, and sequential part generation, showing our strength in realistic tasks with the demand for high physical plausibility.
 </details>
 
-### 7. SINGAPO: Single Image Controlled Generation of Articulated Parts in Object
+### 8. SINGAPO: Single Image Controlled Generation of Articulated Parts in Object
 
 *SINGAPO, arXiv 2024*
 
@@ -846,7 +863,7 @@ Interactable objects are ubiquitous in our daily lives. Recent advances in 3D ge
 We address the challenge of creating 3D assets for household articulated objects from a single image. Prior work on articulated object creation either requires multi-view multi-state input, or only allows coarse control over the generation process. These limitations hinder the scalability and practicality for articulated object modeling. In this work, we propose a method to generate articulated objects from a single image. Observing the object in resting state from an arbitrary view, our method generates an articulated object that is visually consistent with the input image. To capture the ambiguity in part shape and motion posed by a single view of the object, we design a diffusion model that learns the plausible variations of objects in terms of geometry and kinematics. To tackle the complexity of generating structured data with attributes in multiple domains, we design a pipeline that produces articulated objects from high-level structure to geometric details in a coarse-to-fine manner, where we use a part connectivity graph and part abstraction as proxies. Our experiments show that our method outperforms the state-of-the-art in articulated object creation by a large margin in terms of the generated object realism, resemblance to the input image, and reconstruction quality.
 </details>
 
-### 8. MeshArt: Generating Articulated Meshes with Structure-guided Transformers
+### 9. MeshArt: Generating Articulated Meshes with Structure-guided Transformers
 *MeshArt, CVPR 2025*
 
 [📄 Paper](https://arxiv.org/abs/2412.11596) | [🌐 Project Page](https://daoyig.github.io/Mesh_Art/)
@@ -858,7 +875,7 @@ We address the challenge of creating 3D assets for household articulated objects
 Articulated 3D object generation is fundamental for creating realistic, functional, and interactable virtual assets which are not simply static. We introduce MeshArt, a hierarchical transformer-based approach to generate articulated 3D meshes with clean, compact geometry, reminiscent of human-crafted 3D models. We approach articulated mesh generation in a part-by-part fashion across two stages. First, we generate a high-level articulation-aware object structure; then, based on this structural information, we synthesize each part's mesh faces. Key to our approach is modeling both articulation structures and part meshes as sequences of quantized triangle embeddings, leading to a unified hierarchical framework with transformers for autoregressive generation. Object part structures are first generated as their bounding primitives and articulation modes; a second transformer, guided by these articulation structures, then generates each part's mesh triangles. To ensure coherency among generated parts, we introduce structure-guided conditioning that also incorporates local part mesh connectivity. MeshArt shows significant improvements over state of the art, with 57.1% improvement in structure coverage and a 209-point improvement in mesh generation FID.
 </details>
 
-### 9. NAP: Neural 3D Articulation Prior
+### 10. NAP: Neural 3D Articulation Prior
 *NAP, NIPS 2023*
 
 [📄 Paper](https://arxiv.org/abs/2305.16315) | [🌐 Project Page](https://www.cis.upenn.edu/~leijh/projects/nap/) | [💻 Code](https://github.com/JiahuiLei/NAP)
@@ -869,7 +886,7 @@ Articulated 3D object generation is fundamental for creating realistic, function
 We propose Neural 3D Articulation Prior (NAP), the first 3D deep generative model to synthesize 3D articulated object models. Despite the extensive research on generating 3D objects, compositions, or scenes, there remains a lack of focus on capturing the distribution of articulated objects, a common object category for human and robot interaction. To generate articulated objects, we first design a novel articulation tree/graph parameterization and then apply a diffusion-denoising probabilistic model over this representation where articulated objects can be generated via denoising from random complete graphs. In order to capture both the geometry and the motion structure whose distribution will affect each other, we design a graph-attention denoising network for learning the reverse diffusion process. We propose a novel distance that adapts widely used 3D generation metrics to our novel task to evaluate generation quality, and experiments demonstrate our high performance in articulated object generation. We also demonstrate several conditioned generation applications, including Part2Motion, PartNet-Imagination, Motion2Part, and GAPart2Object.
 </details>
 
-### 10. CAGE: Controllable Articulation Generation
+### 11. CAGE: Controllable Articulation Generation
 *CAGE, arXiv 2023*
 
 [📄 Paper](https://arxiv.org/abs/2312.09570) | [🌐 Project Page](https://3dlg-hcvc.github.io/cage/) | [💻 Code](https://github.com/3dlg-hcvc/cage)
