@@ -10,6 +10,9 @@ A curated list of resources for articulated objects understanding, including art
 - Migrate the paper list from Excel to CSV and update the Markdown generation script
 - Update the articulated-object survey to its Computer Graphics Forum publication
 
+**2026/5/22**
+- Add 1 paper: Sketch2Arti
+
 **2025/3/17**
 - Add 3 paper: GAPS, MeshArt, REArtGS
 
