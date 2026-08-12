@@ -1,3 +1,4 @@
 output.md
-excel/
+excel/*.xlsx
+.DS_Store
 .vscode/
