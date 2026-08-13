@@ -1,6 +1,8 @@
 # Awesome Articulated Objects Understanding
 A curated list of resources for articulated objects understanding, including articulation estimation and articulated object reconstruction, excluding human/animal reconstruction. This list is intended to track to the development of articulated objects understanding. If you have any suggestions (missing papers, new tasks, etc.), feel free to pull a request or open an issue.
 
+Use the [`add-articulated-paper`](https://github.com/dougefla/add-articulated-paper) Codex skill to conveniently add a paper from its title, arXiv link, GitHub repository, or project page.
+
 <details span>
 <summary><b>Update log</b></summary>
 <br>
