@@ -5,6 +5,9 @@ A curated list of resources for articulated objects understanding, including art
 <summary><b>Update log</b></summary>
 <br>
 
+**2026/8/13**
+- Add 1 paper: StructureGS
+
 **2026/8/12**
 - Add 12 papers: CAP-Net, ArtVIP, ArticulatedGS, IAAO, iTACO, SPLATART, Infinite Mobility, DIPO, FreeArt3D, RigGS, LARM, and Articulated Object Understanding from a Single Video Sequence
 - Migrate the paper list from Excel to CSV and update the Markdown generation script
@@ -587,7 +590,21 @@ In this paper, we tackle the task of object kinematic motion prediction problem 
 
 ## Digital Twins
 
-### 1. REArtGS: Reconstructing and Generating Articulated Objects via 3D Gaussian Splatting with Geometric and Motion Constraints
+### 1. StructureGS: Structure-aware Gaussian Splatting for Articulated Object Reconstruction
+*StructureGS, ECCV 2026*
+
+[📄 Paper](https://arxiv.org/abs/2607.26889)
+- Level: Category-Agnostic
+- Dataset: PARIS, DTA-Multi, ArtGS-Multi
+- Input: Multi-view RGB Images in Two States
+<details span>
+<summary><b>Abstract</b></summary>
+<br>
+
+Reconstructing articulated objects with multiple movable parts is essential for understanding object structure and enabling physical interaction. However, this reconstruction task poses significant challenges due to the entanglement of geometry, appearance, and motion parameters during optimization. Existing methods rely primarily on photometric supervision, which commonly fails to disentangle these interdependent components, resulting in poor part decomposition with blurred boundaries and geometric artifacts. To address this limitation, we introduce StructureGS, a reconstruction framework for articulated objects that integrates structure-aware guidance into 3D Gaussian Splatting. Our approach leverages oriented bounding boxes of object parts to enforce two key structural properties: spatial coherence, which constrains each part's geometry to remain compact and spatially coherent within its designated region, and structural connectivity, which enforces physically plausible contact relationships between adjacent parts. These properties are realized through structure-aware losses that inject explicit structural constraints into the optimization process. Extensive experiments demonstrate that our method achieves state-of-the-art performance in articulated object reconstruction, producing high-quality results with well-defined part geometries.
+</details>
+
+### 2. REArtGS: Reconstructing and Generating Articulated Objects via 3D Gaussian Splatting with Geometric and Motion Constraints
 *REArtGS, arXiv 2025*
 
 [📄 Paper](https://arxiv.org/abs/2503.06677) | [🌐 Project Page](https://sites.google.com/view/reartgs/home)
@@ -601,7 +618,7 @@ In this paper, we tackle the task of object kinematic motion prediction problem 
 Articulated objects, as prevalent entities in human life, their 3D representations play crucial roles across various applications. However, achieving both high-fidelity textured surface reconstruction and dynamic generation for articulated objects remains challenging for existing methods. In this paper, we present REArtGS, a novel framework that introduces additional geometric and motion constraints to 3D Gaussian primitives, enabling high-quality textured surface reconstruction and generation for articulated objects. Specifically, given multi-view RGB images of arbitrary two states of articulated objects,  we first introduce an unbiased Signed Distance Field (SDF) guidance to regularize Gaussian opacity fields, enhancing geometry constraints and improving surface reconstruction quality. Then we establish deformable fields for 3D Gaussians constrained by the kinematic structures of articulated objects, achieving unsupervised generation of surface meshes in unseen states. Extensive experiments on both synthetic and real datasets demonstrate our approach achieves high-quality textured surface reconstruction for given states, and enables high-fidelity surface generation for unseen states. Codes will be released within the next four months.
 </details>
 
-### 2. ArticulatedGS: Self-supervised Digital Twin Modeling of Articulated Objects using 3D Gaussian Splatting
+### 3. ArticulatedGS: Self-supervised Digital Twin Modeling of Articulated Objects using 3D Gaussian Splatting
 *ArticulatedGS, CVPR 2025*
 
 [📄 Paper](https://arxiv.org/abs/2503.08135)
@@ -614,7 +631,7 @@ Articulated objects, as prevalent entities in human life, their 3D representatio
 We tackle the challenge of concurrent reconstruction at the part level with the RGB appearance and estimation of motion parameters for building digital twins of articulated objects using the 3D Gaussian Splatting (3D-GS) method. With two distinct sets of multi-view imagery, each depicting an object in separate static articulation configurations, we reconstruct the articulated object in 3D Gaussian representations with both appearance and geometry information at the same time. Our approach decoupled multiple highly interdependent parameters through a multi-step optimization process, thereby achieving a stable optimization procedure and high-quality outcomes. We introduce ArticulatedGS, a self-supervised, comprehensive framework that autonomously learns to model shapes and appearances at the part level and synchronizes the optimization of motion parameters, all without reliance on 3D supervision, motion cues, or semantic labels. Our experimental results demonstrate that, among comparable methodologies, our approach has achieved optimal outcomes in terms of part segmentation accuracy, motion estimation accuracy, and visual quality.
 </details>
 
-### 3. IAAO: Interactive Affordance Learning for Articulated Objects in 3D Environments
+### 4. IAAO: Interactive Affordance Learning for Articulated Objects in 3D Environments
 *IAAO, CVPR 2025*
 
 [📄 Paper](https://arxiv.org/abs/2504.06827)
@@ -627,7 +644,7 @@ We tackle the challenge of concurrent reconstruction at the part level with the 
 This work presents IAAO, a novel framework that builds an explicit 3D model for intelligent agents to gain understanding of articulated objects in their environment through interaction. Unlike prior methods that rely on task-specific networks and assumptions about movable parts, our IAAO leverages large foundation models to estimate interactive affordances and part articulations in three stages. We first build hierarchical features and label fields for each object state using 3D Gaussian Splatting (3DGS) by distilling mask features and view-consistent labels from multi-view images. We then perform object- and part-level queries on the 3D Gaussian primitives to identify static and articulated elements, estimating global transformations and local articulation parameters along with affordances. Finally, scenes from different states are merged and refined based on the estimated transformations, enabling robust affordance-based interaction and manipulation of objects. Experimental results demonstrate the effectiveness of our method.
 </details>
 
-### 4. iTACO: Interactable Digital Twins of Articulated Objects from Casually Captured RGBD Videos
+### 5. iTACO: Interactable Digital Twins of Articulated Objects from Casually Captured RGBD Videos
 *iTACO, arXiv 2025*
 
 [📄 Paper](https://arxiv.org/abs/2506.08334) | [🌐 Project Page](https://3dlg-hcvc.github.io/video2articulation/)
@@ -641,7 +658,7 @@ This work presents IAAO, a novel framework that builds an explicit 3D model for 
 Articulated objects are prevalent in daily life. Interactable digital twins of such objects have numerous applications in embodied AI and robotics. Unfortunately, current methods to digitize articulated real-world objects require carefully captured data, preventing practical, scalable, and generalizable acquisition. We focus on motion analysis and part-level segmentation of an articulated object from a casually captured RGBD video shot with a hand-held camera. A casually captured video of an interaction with an articulated object is easy to obtain at scale using smartphones. However, this setting is challenging due to simultaneous object and camera motion and significant occlusions as the person interacts with the object. To tackle these challenges, we introduce iTACO: a coarse-to-fine framework that infers joint parameters and segments movable parts of the object from a dynamic RGBD video. To evaluate our method under this new setting, we build a dataset of 784 videos containing 284 objects across 11 categories that is 20 times larger than available in prior work. We then compare our approach with existing methods that also take video as input. Our experiments show that iTACO outperforms existing articulated object digital twin methods on both synthetic and real casually captured RGBD videos.
 </details>
 
-### 5. SPLATART: Articulated Gaussian Splatting with Estimated Object Structure
+### 6. SPLATART: Articulated Gaussian Splatting with Estimated Object Structure
 *SPLATART, IROS 2025*
 
 [📄 Paper](https://arxiv.org/abs/2506.12184)
@@ -655,7 +672,7 @@ Articulated objects are prevalent in daily life. Interactable digital twins of s
 Representing articulated objects remains a difficult problem within the field of robotics. Objects such as pliers, clamps, or cabinets require representations that capture not only geometry and color information, but also part separation, connectivity, and joint parametrization. Furthermore, learning these representations becomes even more difficult with each additional degree of freedom. Complex articulated objects such as robot arms may have seven or more degrees of freedom, and the depth of their kinematic tree may be notably greater than the tools, drawers, and cabinets that are the typical subjects of articulated object research. To address these concerns, we introduce SPLATART, a pipeline for learning Gaussian splat representations of articulated objects from posed images, of which a subset contains image-space part segmentations. SPLATART disentangles the part separation task from the articulation estimation task, allowing for post-facto determination of joint estimation and representation of articulated objects with deeper kinematic trees than previously exhibited. In this work, we present data on the SPLATART pipeline as applied to the synthetic PARIS dataset objects, and qualitative results on a real-world object under sparse segmentation supervision. We additionally present articulated serial-chain manipulators to demonstrate usage on deeper kinematic tree structures.
 </details>
 
-### 6. URDFormer: A Pipeline for Constructing Articulated Simulation Environments from Real-World Images
+### 7. URDFormer: A Pipeline for Constructing Articulated Simulation Environments from Real-World Images
 *URDFormer, RSS 2024*
 
 [📄 Paper](https://arxiv.org/abs/2405.11656) | [🌐 Project Page](https://urdformer.github.io/) | [💻 Code](https://github.com/WEIRDLabUW/urdformer)
@@ -668,7 +685,7 @@ Representing articulated objects remains a difficult problem within the field of
 Constructing simulation scenes that are both visually and physically realistic is a problem of practical interest in domains ranging from robotics to computer vision. This problem has become even more relevant as researchers wielding large data-hungry learning methods seek new sources of training data for physical decision-making systems. However, building simulation models is often still done by hand. A graphic designer and a simulation engineer work with predefined assets to construct rich scenes with realistic dynamic and kinematic properties. While this may scale to small numbers of scenes, to achieve the generalization properties that are required for data-driven robotic control, we require a pipeline that is able to synthesize large numbers of realistic scenes, complete with 'natural' kinematic and dynamic structures. To attack this problem, we develop models for inferring structure and generating simulation scenes from natural images, allowing for scalable scene generation from web-scale datasets. To train these image-to-simulation models, we show how controllable text-to-image generative models can be used in generating paired training data that allows for modeling of the inverse problem, mapping from realistic images back to complete scene models. We show how this paradigm allows us to build large datasets of scenes in simulation with semantic and physical realism. We present an integrated end-to-end pipeline that generates simulation scenes complete with articulated kinematic and dynamic structures from real-world images and use these for training robotic control policies. We then robustly deploy in the real world for tasks like articulated object manipulation. In doing so, our work provides both a pipeline for large-scale generation of simulation environments and an integrated system for training robust robotic control policies in the resulting environments.
 </details>
 
-### 7. Real2Code: Reconstruct Articulated Objects via Code Generation
+### 8. Real2Code: Reconstruct Articulated Objects via Code Generation
 *Real2Code, arXiv 2024*
 
 [📄 Paper](https://arxiv.org/abs/2406.08474) | [🌐 Project Page](https://real2code.github.io/) | [💻 Code](https://github.com/MandiZhao/real2code)
@@ -682,7 +699,7 @@ Constructing simulation scenes that are both visually and physically realistic i
 We present Real2Code, a novel approach to reconstructing articulated objects via code generation. Given visual observations of an object, we first reconstruct its part geometry using an image segmentation model and a shape completion model. We then represent the object parts with oriented bounding boxes, which are input to a fine-tuned large language model (LLM) to predict joint articulation as code. By leveraging pre-trained vision and language models, our approach scales elegantly with the number of articulated parts, and generalizes from synthetic training data to real world objects in unstructured environments. Experimental results demonstrate that Real2Code significantly outperforms previous state-of-the-art in reconstruction accuracy, and is the first approach to extrapolate beyond objects' structural complexity in the training set, and reconstructs objects with up to 10 articulated parts. When incorporated with a stereo reconstruction model, Real2Code also generalizes to real world objects from a handful of multi-view RGB images, without the need for depth or camera information.
 </details>
 
-### 8. RoboStudio: A Physics Consistent World Model for Robotic Arm with Hybrid Representation
+### 9. RoboStudio: A Physics Consistent World Model for Robotic Arm with Hybrid Representation
 *RoboStudio, arXiv 2024*
 
 [📄 Paper](https://arxiv.org/abs/2408.14873) | [🌐 Project Page](https://robostudioapp.com/)
@@ -697,7 +714,7 @@ We propose a Real2Sim pipeline with a hybrid representation model that integrate
 This hybrid representation is implemented through a Gaussian-Mesh-Pixel binding technique, which establishes an isomorphic mapping between mesh vertices and Gaussian models. This enables a fully differentiable rendering pipeline that can be optimized through numerical solvers, achieves high-fidelity rendering via Gaussian Splatting, and facilitates physically plausible simulation of the robotic arm's interaction with its environment using mesh-based methods.
 </details>
 
-### 9. DexSim2Real2: Building Explicit World Model for Precise Articulated Object Dexterous Manipulation
+### 10. DexSim2Real2: Building Explicit World Model for Precise Articulated Object Dexterous Manipulation
 *DexSim2Real2, arXiv 2024*
 
 [📄 Paper](https://arxiv.org/abs/2409.08750) | [🌐 Project Page](https://jiangtaoran.github.io/dexsim2real2_website/)
@@ -710,7 +727,7 @@ This hybrid representation is implemented through a Gaussian-Mesh-Pixel binding 
 Articulated object manipulation is ubiquitous in daily life. In this paper, we present DexSim2Real2, a novel robot learning framework for goal-conditioned articulated object manipulation using both two-finger grippers and multi-finger dexterous hands. The key of our framework is constructing an explicit world model of unseen articulated objects through active one-step interactions. This explicit world model enables sampling-based model predictive control to plan trajectories achieving different manipulation goals without needing human demonstrations or reinforcement learning. It first predicts an interaction motion using an affordance estimation network trained on self-supervised interaction data or videos of human manipulation from the internet. After executing this interaction on the real robot, the framework constructs a digital twin of the articulated object in simulation based on the two point clouds before and after the interaction. For dexterous multi-finger manipulation, we propose to utilize eigengrasp to reduce the high-dimensional action space, enabling more efficient trajectory searching. Extensive experiments validate the framework's effectiveness for precise articulated object manipulation in both simulation and the real world using a two-finger gripper and a 16-DoF dexterous hand. The robust generalizability of the explicit world model also enables advanced manipulation strategies, such as manipulating with different tools.
 </details>
 
-### 10. ACDC: Automated Creation of Digital Cousins for Robust Policy Learning
+### 11. ACDC: Automated Creation of Digital Cousins for Robust Policy Learning
 *ACDC, CoRL 2024*
 
 [📄 Paper](https://arxiv.org/abs/2410.07408) | [🌐 Project Page](https://digital-cousins.github.io/)
@@ -723,7 +740,7 @@ Articulated object manipulation is ubiquitous in daily life. In this paper, we p
 Training robot policies in the real world can be unsafe, costly, and difficult to scale. Simulation serves as an inexpensive and potentially limitless source of training data, but suffers from the semantics and physics disparity between simulated and real-world environments. These discrepancies can be minimized by training in digital twins, which serve as virtual replicas of a real scene but are expensive to generate and cannot produce cross-domain generalization. To address these limitations, we propose the concept of digital cousins, a virtual asset or scene that, unlike a digital twin, does not explicitly model a real-world counterpart but still exhibits similar geometric and semantic affordances. As a result, digital cousins simultaneously reduce the cost of generating an analogous virtual environment while also facilitating better robustness during sim-to-real domain transfer by providing a distribution of similar training scenes. Leveraging digital cousins, we introduce a novel method for their automated creation, and propose a fully automated real-to-sim-to-real pipeline for generating fully interactive scenes and training robot policies that can be deployed zero-shot in the original scene. We find that digital cousin scenes that preserve geometric and semantic affordances can be produced automatically, and can be used to train policies that outperform policies trained on digital twins, achieving 90% vs. 25% success rates under zero-shot sim-to-real transfer. 
 </details>
 
-### 11. Articulate-Anything: Automatic Modeling of Articulated Objects via a Vision-Language Foundation Model
+### 12. Articulate-Anything: Automatic Modeling of Articulated Objects via a Vision-Language Foundation Model
 *Articulate-Anything, arXiv 2024*
 
 [📄 Paper](https://arxiv.org/abs/2410.13882) | [🌐 Project Page](https://articulate-anything.github.io/) | [💻 Code](https://github.com/vlongle/articulate-anything)
@@ -737,7 +754,7 @@ Training robot policies in the real world can be unsafe, costly, and difficult t
 Interactive 3D simulated objects are crucial in AR/VR, animations, and robotics, driving immersive experiences and advanced automation. However, creating these articulated objects requires extensive human effort and expertise, limiting their broader applications. To overcome this challenge, we present Articulate-Anything, a system that automates the articulation of diverse, complex objects from many input modalities, including text, images, and videos. Articulate-Anything leverages vision-language models (VLMs) to generate code that can be compiled into an interactable digital twin for use in standard 3D simulators. Our system exploits existing 3D asset datasets via a mesh retrieval mechanism, along with an actor-critic system that iteratively proposes, evaluates, and refines solutions for articulating the objects, self-correcting errors to achieve a robust outcome. Qualitative evaluations demonstrate Articulate-Anything's capability to articulate complex and even ambiguous object affordances by leveraging rich grounded inputs. In extensive quantitative experiments on the standard PartNet-Mobility dataset, Articulate-Anything substantially outperforms prior work, increasing the success rate from 8.7-11.6% to 75% and setting a new bar for state-of-the-art performance. We further showcase the utility of our system by generating 3D assets from in-the-wild video inputs, which are then used to train robotic policies for fine-grained manipulation tasks in simulation that go beyond basic pick and place. These policies are then transferred to a real robotic system.
 </details>
 
-### 12. PARIS: Part-level Reconstruction and Motion Analysis for Articulated Objects
+### 13. PARIS: Part-level Reconstruction and Motion Analysis for Articulated Objects
 *PARIS, ICCV 2023*
 
 [📄 Paper](https://arxiv.org/abs/2308.07391) | [🌐 Project Page](https://3dlg-hcvc.github.io/paris/) | [💻 Code](https://github.com/3dlg-hcvc/paris)
@@ -751,7 +768,7 @@ Interactive 3D simulated objects are crucial in AR/VR, animations, and robotics,
 We design a self-supervised approach without relying any 3D supervision, semantic or motion annotations. The key idea is that we separate the parts from two-state observations by leveraging motion as a cue. Since the motion accounts for the inconsistency between two states, we optimize the motion parameters by registering the moving parts from the input states t to a canonical state t*. During registration, the component that agrees with the transformation is extracted as the movable part. And the one remaining still is extracted as the static part.
 </details>
 
-### 13. Building Digital Twins of Articulated Objects and Scenes through Interactive Perception
+### 14. Building Digital Twins of Articulated Objects and Scenes through Interactive Perception
 *Ditto, Thesis*
 
 [📄 Paper](https://hdl.handle.net/2152/119137)
