@@ -84,6 +84,7 @@ Use the [`add-articulated-paper`](https://github.com/dougefla/add-articulated-pa
 - Initiate with 39 papers.
 </br>
 </details>
+
 ## Table of contents
 
 - [Survey](#survey)
